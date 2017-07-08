@@ -1,3 +1,4 @@
+(require 'cl-lib)
 ;; Move Backup Directory to temp file directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
@@ -17,8 +18,8 @@
 (menu-bar-mode -1)
 
 ;; remove scrollbar
-(tool-bar-mode -1)
-
+(tool-bar-mode -1
+)
 ;; Move Temp Files
 (defconst emacs-tmp-dir (expand-file-name (format "emacs%d" (user-uid)) temporary-file-directory))
 (setq backup-directory-alist
@@ -70,6 +71,9 @@
 (add-hook 'haskell-mode-hook 'my-haskell-hook)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
@@ -79,8 +83,10 @@
  '(custom-enabled-themes (quote (weyland-yutani)))
  '(custom-safe-themes
    (quote
-    ("d787eeb34329786bf55dbaf98e20cdfcef01fb88c6592ae17f53ecba122948a7" default)))
+    ("bd17fab82168d7eee21b600f1bb9b09de34270478a9008f6b5436803c4d61d3d" "d787eeb34329786bf55dbaf98e20cdfcef01fb88c6592ae17f53ecba122948a7" default)))
+ '(display-battery-mode t)
  '(haskell-tags-on-save t)
+ '(nyan-mode t)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
@@ -88,6 +94,9 @@
  '(package-selected-packages (quote (ghc haskell-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 
@@ -98,16 +107,16 @@
 (package-initialize)
 
 ;; Linux Machines
-;;(let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
-;;  (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
-;;  (add-to-list 'exec-path my-cabal-path))
+(let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
+  (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
+  (add-to-list 'exec-path my-cabal-path))
 
 ;; Windows Machines
-(let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
-  (setenv "PATH" (concat my-cabal-path ";" (getenv "PATH")))
-  (add-to-list 'exec-path my-cabal-path))
-(let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
-  (setenv "PATH" (concat my-cabal-path ";" (getenv "PATH")))
-  (add-to-list 'exec-path my-cabal-path))
+;; (let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
+;;  (setenv "PATH" (concat my-cabal-path ";" (getenv "PATH")))
+;;  (add-to-list 'exec-path my-cabal-path))
+;; (let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
+;;  (setenv "PATH" (concat my-cabal-path ";" (getenv "PATH")))
+;;  (add-to-list 'exec-path my-cabal-path))
 
 (put 'scroll-left 'disabled nil)
