@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d/custom-html-rows.el")
+
 (require 'cl-lib)
 ;; Move Backup Directory to temp file directory
 (setq backup-directory-alist
@@ -80,7 +82,7 @@
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(blink-cursor-mode nil)
  '(cursor-type (quote box))
- '(custom-enabled-themes (quote (weyland-yutani)))
+ '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes
    (quote
     ("bd17fab82168d7eee21b600f1bb9b09de34270478a9008f6b5436803c4d61d3d" "d787eeb34329786bf55dbaf98e20cdfcef01fb88c6592ae17f53ecba122948a7" default)))
