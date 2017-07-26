@@ -1,5 +1,9 @@
 (add-to-list 'load-path "~/.emacs.d/custom-html-rows.el")
 
+(add-to-list 'load-path' "~/.emacs.d/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 (require 'cl-lib)
 ;; Move Backup Directory to temp file directory
 (setq backup-directory-alist
@@ -88,6 +92,7 @@
     ("bd17fab82168d7eee21b600f1bb9b09de34270478a9008f6b5436803c4d61d3d" "d787eeb34329786bf55dbaf98e20cdfcef01fb88c6592ae17f53ecba122948a7" default)))
  '(display-battery-mode t)
  '(haskell-tags-on-save t)
+ '(ido-mode (quote both) nil (ido))
  '(nyan-mode t)
  '(package-archives
    (quote
