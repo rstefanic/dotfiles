@@ -2,31 +2,49 @@
 
 echo "Setting up environment..."
 
+BACKUP="~/dotfiles-backup"
+
 # Make zsh default shell
 chsh -s $(which zsh)
 
-mkdir ~/dotfile-backup
-mv ~/.zshrc ~/dotfile-backup
-cp .zshrc ~/
+if [ ! -d "$BACKUP" ]; then
+   mkdir "$BACKUP"
+fi
+
+if [ -e x "~/.zshrc" ]; then 
+   mv ~/.zshrc ~/dotfile-backup
+fi
+   
+cp .zshrc "$HOME"
 
 # If xmonad is installed, then set up xmonad settings
 if test ! $(which xmonad); then
-    mv -rf ~/.xmonad ~/dotfile-backup
-    rm -rf ~/.xmonad
-    cp .xmonad ~/
+    if [ -d "~/.xmonad" ]; then
+	mv -rf ~/.xmonad "$BACKUP"
+	rm -rf ~/.xmonad
+    fi
 
-    mv ~/.xmobarrc ~/dotfile-backup
-    rm ~/.xmobarrc
+    if [ -e x ~/.xmobarrc ]; then
+	mv ~/.xmobarrc "$BACKUP"
+	rm ~/.xmobarrc
+    fi
+    
+    cp .xmonad ~/
     cp .xmobarrc ~/
 fi
 
 # If emacs is installed, setup emacs files
 if test ! $(which emacs); then
-    mv ~/.emacs ~/dotfile-backup
-    rm ~/.emacs
-    cp .emacs ~/
+    if [ -e x ~/.emacs ]; then
+	mv ~/.emacs "$BACKUP"
+	rm ~/.emacs
+    fi
 
-    mv ~/.emacs.d ~/dotfile-backup
-    rm ~/.emacs.d
+    if [ -d "~/.emacs.d" ]; then
+	mv ~/.emacs.d "$BACKUP"
+	rm ~/.emacs.d
+    fi
+    
+    cp .emacs ~/
     cp .emacs.d ~/
 fi
