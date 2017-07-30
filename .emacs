@@ -24,8 +24,8 @@
 (menu-bar-mode -1)
 
 ;; remove scrollbar
-(tool-bar-mode -1
-)
+(toggle-scroll-bar -1)
+
 ;; Move Temp Files
 (defconst emacs-tmp-dir (expand-file-name (format "emacs%d" (user-uid)) temporary-file-directory))
 (setq backup-directory-alist
@@ -86,7 +86,7 @@
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(blink-cursor-mode nil)
  '(cursor-type (quote box))
- '(custom-enabled-themes (quote (leuven)))
+ '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
     ("bd17fab82168d7eee21b600f1bb9b09de34270478a9008f6b5436803c4d61d3d" "d787eeb34329786bf55dbaf98e20cdfcef01fb88c6592ae17f53ecba122948a7" default)))

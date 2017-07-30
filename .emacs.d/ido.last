@@ -2,12 +2,18 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/robert/Projects/typeline/" . "src/")
+ ("/home/robert/Projects/" . "typeline/")
+ ("/home/robert/" . "Projects/")
  ("c:/Users/rstefanic/Documents/My Projects/learning_site/" . "Include/")
  ("c:/Users/rstefanic/Documents/My Projects/learning_site/learning_site/" . "courses/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/robert/Projects/typeline/src/"
+ "/home/robert/Projects/typeline/"
+ "/home/robert/"
  "c:/Users/rstefanic/Documents/My Projects/learning_site/learning_site/assets/css/"
  "c:/Users/rstefanic/Documents/My Projects/learning_site/learning_site/templates/"
  "c:/Users/rstefanic/Documents/My Projects/learning_site/learning_site/learning_site/"
@@ -17,20 +23,28 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "Main.hs"
+ "README.md"
+ "ParseCSS.hs"
+ "Makefile"
+ ".emacs"
+ ".bashrc"
  "layout.css"
  "home.html"
  "layout.html"
  "urls.py"
- "views.py"
- "show_courses.html"
- "course_list.html"
- "admin.py"
- "__init__.py"
- "settings.py"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/robert/" (22910 1014 912802 649000) "missfont.log" ".xmobarrc" "./" ".pki/" ".stack/" ".xmonad/" "Public/" ".dbus/" ".gconf/" ".xsession-errors.old" ".thumbnails/" ".ICEauthority" ".sqlite_history" ".xsession-errors" ".pip/" "Documents/" ".cache/" ".stalonetrayrc" ".cabal/" ".ghc/" "Mail/" "test/" "Desktop/" ".local/" "Downloads/" ".emacs.d/" ".gnupg/" "Music/" "findstack.txt" "Pictures/" "emacs-file/" ".mozilla/" ".gnome/" ".profile" "Videos/" ".gstreamer-0.10/" ".sql" ".gitconfig" "Projects/" ".bash_history" ".mysql/" ".config/" ".bashrc" "Templates/" "../" ".emacs" ".python_history" ".muttrc" ".bash_logout" ".Xauthority" ".aptitude/" ".dmrc" ".gimp-2.8/")
+
+ ("/home/robert/Projects/typeline/src/" (22878 58830 314930 736000) "./" "ParseCSS.hs" "Main.hs" "../")
+
+ ("/home/robert/Projects/typeline/" (22886 55081 458443 232000) "./" "TAGS" "Makefile" "stack.yaml" "README.md" "Setup.hs" ".git/" "tests/" "../" ".stack-work/" "src/" ".gitignore" "LICENSE" "Typeline.cabal")
+
+ ("/home/robert/Projects/" (22909 7215 994139 256000) "haskell-learning/" "./" "TAGS" "dnd.pdf" "test.css" "dnd.mwb.bak" "typeline/" "haskell-ignore.txt" "dnd.mwb" "backup/" "test.hs" "CE_emailer/" "output.pdf" "verifyBulk/" "herms/" "verify-bulk/" "haskell-example.hs" "../" "dnd_db.txt" "bash_scripts/" "hotel/" "trialsclubs/")
+
  ("c:/Users/rstefanic/Documents/My Projects/learning_site/learning_site/assets/css/" (22904 1458 0 0) "../" "./")
 
  ("c:/Users/rstefanic/Documents/My Projects/learning_site/learning_site/templates/" (22904 1200 0 0) "layout.html" "home.html" "../" "./")
