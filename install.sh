@@ -50,19 +50,19 @@ create_backup_dotfiles() {
 install_zsh() {
     # Check if zsh is installed
     if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
-	if [[ ! -d $dir/oh-my-zsh/ ]]; then
+	if [ ! -d $dir/oh-my-zsh/ ]; then
 	    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	fi
 
 	# Set zsh as the default shell
-	if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
+	if [ ! $(echo $SHELL) == $(which zsh) ]; then
 	    sudo chsh -s $(which zsh)
 	fi
 
         mv -f ~/.zshrc $dir_backup
-	cp -f 
+	cp -f .zshrc ~/.zshrc
     else
-	if [[ -f /etc/debian_version ]]; then
+	if [ -f /etc/debian_version ]; then
 	    sudo apt-get install zsh
 	    install_zsh
 	else
