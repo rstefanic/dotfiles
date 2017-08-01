@@ -2,49 +2,76 @@
 
 echo "Setting up environment..."
 
-BACKUP="~/dotfiles-backup"
+dir=~/dotfiles
+dir_backup=~/dotfiles-backup
 
-# Make zsh default shell
-chsh -s $(which zsh)
+xmonad_config() {
+    # If xmonad is installed, then set up xmonad settings
+    if test ! $(which xmonad); then
+	if [ -d "~/.xmonad" ]; then
+	    mv -rf ~/.xmonad "$BACKUP"
+	    rm -rf ~/.xmonad
+	fi
 
-if [ ! -d "$BACKUP" ]; then
-   mkdir "$BACKUP"
-fi
+	if [ -e x ~/.xmobarrc ]; then
+	    mv ~/.xmobarrc "$BACKUP"
+	    rm ~/.xmobarrc
+	fi
 
-if [ -e x "~/.zshrc" ]; then 
-   mv ~/.zshrc ~/dotfile-backup
-fi
-   
-cp .zshrc "$HOME"
-
-# If xmonad is installed, then set up xmonad settings
-if test ! $(which xmonad); then
-    if [ -d "~/.xmonad" ]; then
-	mv -rf ~/.xmonad "$BACKUP"
-	rm -rf ~/.xmonad
+	cp .xmonad ~/
+	cp .xmobarrc ~/
     fi
+}
 
-    if [ -e x ~/.xmobarrc ]; then
-	mv ~/.xmobarrc "$BACKUP"
-	rm ~/.xmobarrc
-    fi
-    
-    cp .xmonad ~/
-    cp .xmobarrc ~/
-fi
+emacs_config() {
+    # If emacs is installed, setup emacs files
+    if test ! $(which emacs); then
+	if [ -e x ~/.emacs ]; then
+	    mv ~/.emacs "$BACKUP"
+	    rm ~/.emacs
+	fi
 
-# If emacs is installed, setup emacs files
-if test ! $(which emacs); then
-    if [ -e x ~/.emacs ]; then
-	mv ~/.emacs "$BACKUP"
-	rm ~/.emacs
-    fi
+	if [ -d "~/.emacs.d" ]; then
+	    mv ~/.emacs.d "$BACKUP"
+	    rm ~/.emacs.d
+	fi
 
-    if [ -d "~/.emacs.d" ]; then
-	mv ~/.emacs.d "$BACKUP"
-	rm ~/.emacs.d
+	cp .emacs ~/
+	cp .emacs.d ~/
     fi
-    
-    cp .emacs ~/
-    cp .emacs.d ~/
-fi
+}
+
+create_backup_dotfiles() {
+    if [ ! -d $dir_backup ]; then
+       mkdir -p $dir_backup
+    fi
+}
+
+install_zsh() {
+    # Check if zsh is installed
+    if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
+	if [[ ! -d $dir/oh-my-zsh/ ]]; then
+	    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	fi
+
+	# Set zsh as the default shell
+	if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
+	    sudo chsh -s $(which zsh)
+	fi
+
+        mv -f ~/.zshrc $dir_backup
+	cp -f 
+    else
+	if [[ -f /etc/debian_version ]]; then
+	    sudo apt-get install zsh
+	    install_zsh
+	else
+	    echo "Cannot install zsh -- Cannot use apt-get to install zsh"
+	fi
+    fi
+}
+
+create_backup_dotfiles
+install_zsh
+xmonad_config
+emacs_config
