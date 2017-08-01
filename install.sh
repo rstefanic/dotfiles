@@ -13,7 +13,7 @@ xmonad_config() {
 	    rm -rf ~/.xmonad
 	fi
 
-	if [ -e x ~/.xmobarrc ]; then
+	if [ -e ~/.xmobarrc ]; then
 	    mv ~/.xmobarrc "$BACKUP"
 	    rm ~/.xmobarrc
 	fi
@@ -26,7 +26,7 @@ xmonad_config() {
 emacs_config() {
     # If emacs is installed, setup emacs files
     if test ! $(which emacs); then
-	if [ -e x ~/.emacs ]; then
+	if [ -e ~/.emacs ]; then
 	    mv ~/.emacs "$BACKUP"
 	    rm ~/.emacs
 	fi
@@ -55,11 +55,14 @@ install_zsh() {
 	fi
 
 	# Set zsh as the default shell
-	if [ ! $(echo $SHELL) == $(which zsh) ]; then
+	if [ ! $(echo $SHELL) = $(which zsh) ]; then
 	    sudo chsh -s $(which zsh)
 	fi
 
-        mv -f ~/.zshrc $dir_backup
+	if [ -f ~/.zshrc ]; then
+	    mv -f ~/.zshrc $dir_backup
+	fi
+	
 	cp -f .zshrc ~/.zshrc
     else
 	if [ -f /etc/debian_version ]; then
