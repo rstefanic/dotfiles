@@ -9,12 +9,12 @@ xmonad_config() {
     # If xmonad is installed, then set up xmonad settings
     if test ! $(which xmonad); then
 	if [ -d "~/.xmonad" ]; then
-	    mv -rf ~/.xmonad "$BACKUP"
+	    mv -rf ~/.xmonad $dir_backup
 	    rm -rf ~/.xmonad
 	fi
 
 	if [ -e ~/.xmobarrc ]; then
-	    mv ~/.xmobarrc "$BACKUP"
+	    mv ~/.xmobarrc $dir_backup
 	    rm ~/.xmobarrc
 	fi
 
@@ -27,12 +27,12 @@ emacs_config() {
     # If emacs is installed, setup emacs files
     if test ! $(which emacs); then
 	if [ -e ~/.emacs ]; then
-	    mv ~/.emacs "$BACKUP"
+	    mv ~/.emacs $dir_backup
 	    rm ~/.emacs
 	fi
 
 	if [ -d "~/.emacs.d" ]; then
-	    mv ~/.emacs.d "$BACKUP"
+	    mv ~/.emacs.d $dir_backup
 	    rm ~/.emacs.d
 	fi
 
