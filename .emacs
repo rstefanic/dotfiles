@@ -1,8 +1,10 @@
+(add-to-list 'load-path "~/.emacs.d/elpa/evil-1.2.13")
+(require 'evil)
+(evil-mode 1)
+
 (add-to-list 'load-path "~/.emacs.d/custom-html-rows.el")
 
-(add-to-list 'load-path' "~/.emacs.d/neotree")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+(set-face-attribute 'default nil :height 140)
 
 (require 'cl-lib)
 ;; Move Backup Directory to temp file directory
@@ -86,10 +88,10 @@
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(blink-cursor-mode nil)
  '(cursor-type (quote box))
- '(custom-enabled-themes (quote (wombat)))
+ '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote
-    ("bd17fab82168d7eee21b600f1bb9b09de34270478a9008f6b5436803c4d61d3d" "d787eeb34329786bf55dbaf98e20cdfcef01fb88c6592ae17f53ecba122948a7" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "bd17fab82168d7eee21b600f1bb9b09de34270478a9008f6b5436803c4d61d3d" "d787eeb34329786bf55dbaf98e20cdfcef01fb88c6592ae17f53ecba122948a7" default)))
  '(display-battery-mode t)
  '(haskell-tags-on-save t)
  '(ido-mode (quote both) nil (ido))

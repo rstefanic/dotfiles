@@ -23,6 +23,14 @@ xmonad_config() {
     fi
 }
 
+vim_config() {
+   if [ -e ~/.vimrc ]; then
+        mv ~/.vimrc $dir_backup
+   fi
+   
+   cp .vimrc ~/ 
+}
+
 emacs_config() {
     # If emacs is installed, setup emacs files
     if test ! $(which emacs); then
