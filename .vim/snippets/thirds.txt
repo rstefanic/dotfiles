@@ -1,0 +1,20 @@
+<br>
+<div class="resp-row">
+    <div class="column third" contenteditable="false">
+        <div class="inner-column" contenteditable="true">
+        
+        </div>
+    </div>
+    <div class="column third" contenteditable="false">
+        <div class="inner-column" contenteditable="true">
+        
+        </div>
+        </div>
+    <div class="column third" contenteditable="false">
+        <div class="inner-column" contenteditable="true">
+        
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<br>
