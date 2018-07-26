@@ -4,23 +4,24 @@ echo "Setting up environment..."
 
 dir=~/dotfiles
 dir_backup=~/dotfiles-backup
+nix_path=/etc/nixos/
 
 xmonad_config() {
     # If xmonad is installed, then set up xmonad settings
     if test ! $(which xmonad); then
-	if [ -d "~/.xmonad" ]; then
-	    mv -rf ~/.xmonad $dir_backup
-	    rm -rf ~/.xmonad
-	fi
 
 	if [ -e ~/.xmobarrc ]; then
 	    mv ~/.xmobarrc $dir_backup
 	    rm ~/.xmobarrc
 	fi
 
-	cp .xmonad ~/
 	cp .xmobarrc ~/
     fi
+}
+
+nixpkgs_config() {
+ cp ./config.nix $nix_path
+ cp -r ./nixpkgs $nix_path 
 }
 
 vim_config() {
@@ -39,13 +40,7 @@ emacs_config() {
 	    rm ~/.emacs
 	fi
 
-	if [ -d "~/.emacs.d" ]; then
-	    mv ~/.emacs.d $dir_backup
-	    rm ~/.emacs.d
-	fi
-
 	cp .emacs ~/
-	cp .emacs.d ~/
     fi
 }
 
@@ -86,3 +81,4 @@ create_backup_dotfiles
 install_zsh
 xmonad_config
 emacs_config
+nixpkgs_config
