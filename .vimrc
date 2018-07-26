@@ -1,8 +1,8 @@
 " General Settings
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=2 
+set shiftwidth=2 
 set softtabstop=4
+set expandtab
 
 " Environment Setup
 syntax on
@@ -33,13 +33,13 @@ imap <c-bs> <c-w>
 
 " Paste HTML Text Functions
 function! Fullrow() 
-    r~/.vim/full-row.txt
+    r~/.vim/snippets/full-row.txt
 endfunction
 
 function! Halfrow()
-    r~/.vim/half-row.txt
+    r~/.vim/snippets/half-row.txt
 endfunction
 
 function! Thirds()
-    r~/.vim/thirds.txt
+    r~/.vim/snippets/thirds.txt
 endfunction
