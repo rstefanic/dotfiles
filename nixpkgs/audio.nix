@@ -8,7 +8,8 @@
 
   environment.systemPackages = 
   [ 
-    pkgs.lsof
+    pkgs.lsof       # To view sound devices
+    pkgs.spotify    # To listen to music
   ];
 
   sound.enable = true;

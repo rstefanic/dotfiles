@@ -8,12 +8,12 @@
 
   environment.systemPackages = 
   [
-    pkgs.ghc
-    pkgs.git
-    pkgs.cabal2nix
-    pkgs.nix-prefetch-git
-    pkgs.cabal-install
-    pkgs.gcc
+    pkgs.ghc                # To Compile Haskell
+    pkgs.git                # Git
+    pkgs.cabal2nix          # To convernt cabal files to nix expressions
+    pkgs.nix-prefetch-git   # Prefech nix expressions from git
+    pkgs.cabal-install      # Cabal Install
+    pkgs.gcc                # GCC compiler
   ];
 
 }
