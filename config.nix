@@ -1,6 +1,8 @@
 {
-  imports = [
-    ./nixpkgs/dev.nix
-    ./nixpkgs/audio.nix
-  ];
+    imports = [
+        ./nix/sys.nix
+        ./nix/dev.nix
+        ./nix/audio.nix
+        ./nix/xmonad.nix
+    ];
 }

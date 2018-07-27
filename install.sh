@@ -20,7 +20,7 @@ xmonad_config() {
 
 nixpkgs_config() {
    cp ./config.nix $nix_path
-   cp -r ./nixpkgs $nix_path 
+   cp -r ./nix $nix_path 
 }
 
 vim_config() {
