@@ -2,8 +2,6 @@
 (require 'evil)
 (evil-mode 1)
 
-(add-to-list 'load-path "~/.emacs.d/custom-html-rows.el")
-
 (set-face-attribute 'default nil :height 140)
 
 (require 'cl-lib)
@@ -36,7 +34,6 @@
     `((".*" ,emacs-tmp-dir t)))
 (setq auto-save-list-file-prefix
     emacs-tmp-dir)
-
 
 (require 'cl)
 
@@ -78,10 +75,6 @@
 
 (add-hook 'haskell-mode-hook 'my-haskell-hook)
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
@@ -101,31 +94,14 @@
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://stable.melpa.org/packages/"))))
  '(package-selected-packages (quote (ghc haskell-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-
 
 (require 'package)
 (add-to-list 'package-archives
   '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
-;; Linux Machines
 (let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
   (setenv "PATH" (concat my-cabal-path ":" (getenv "PATH")))
   (add-to-list 'exec-path my-cabal-path))
-
-;; Windows Machines
-;; (let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
-;;  (setenv "PATH" (concat my-cabal-path ";" (getenv "PATH")))
-;;  (add-to-list 'exec-path my-cabal-path))
-;; (let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
-;;  (setenv "PATH" (concat my-cabal-path ";" (getenv "PATH")))
-;;  (add-to-list 'exec-path my-cabal-path))
 
 (put 'scroll-left 'disabled nil)
