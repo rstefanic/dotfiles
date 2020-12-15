@@ -1,0 +1,6 @@
+#!/bin/bash
+
+function docker-psql() {
+	source ./.env
+	docker exec -it postgres psql -U$DB_USERNAME -d$DB_DATABASE
+}
