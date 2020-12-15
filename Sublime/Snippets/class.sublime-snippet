@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+<?php
+
+namespace App\\${1};
+
+class ${2}
+{
+    ${0}
+}
+
+]]></content>
+<tabTrigger>class</tabTrigger>
+<description>New PHP Class</description>
+<scope>embedding.php, text.html.basic, meta.embedded.block.php, punctuation.section.embedded.begin.php</scope>
+</snippet>
