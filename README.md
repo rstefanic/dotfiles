@@ -1,3 +1,3 @@
 ## My dotfiles
 
-Includes my nixpkgs, xmobar, zsh, vim, and emacs config.
+Includes my nixpkgs, zsh, vim, and sublime config.
