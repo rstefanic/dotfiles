@@ -105,5 +105,6 @@ alias dcr="docker-compose run --rm"
 alias pu="clear && ./vendor/bin/phpunit"
 alias pf="clear && ./vendor/bin/phpunit --filter"
 alias pd="clear && ./vendor/bin/phpunit --testdox"
+alias gt="git log --graph --abbrev-commit --decorate --oneline"
 
 source ~/.scripts/docker-psql
