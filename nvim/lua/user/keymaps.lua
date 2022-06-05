@@ -11,8 +11,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Telescope bindings
-keymap('n', '<leader>p', [[<cmd>lua require('telescope.builtin').find_files()<CR>]])
-keymap('n', '<leader>P', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_tile = 'All Files })<CR>]])
+keymap('n', '<leader>p', [[<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>]])
+keymap('n', '<leader>P', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, hidden = true, prompt_tile = 'All Files' })<CR>]])
 
 -- Init edit and sourcing
 keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
