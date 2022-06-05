@@ -14,6 +14,8 @@ Plug('nvim-telescope/telescope-live-grep-raw.nvim');
 Plug('nvim-telescope/telescope.nvim');
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' });
 
+Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' });
+
 vim.call('plug#end')
 
 require'nvim-treesitter.configs'.setup {
