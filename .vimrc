@@ -1,27 +1,16 @@
-" General Settings
-set tabstop=2 
-set shiftwidth=2 
-set softtabstop=4
 set expandtab
-
-" Environment Setup
-syntax on
+set shiftwidth=4
+set tabstop=4
+set hidden
 set number
-set showcmd
-set ruler
-set laststatus=2
-set textwidth=80
+set termguicolors
+set scrolloff=8
+set sidescrolloff=8
+set confirm
+set list
+set listchars=tab:▸\ ,trail:·
+set clipboard=unnamedplus
+set backup
+set backupdir=~/.local/share/nvim/backup//
+set mouse=a
 
-" Remove Backup and Swap
-set noswapfile
-set nobackup
-set nowritebackup
-
-" Normal Mode Bindings
-nmap <c-s> :w<CR>
-nmap <c-a> <ESC>gg"+yG
-nmap <c-p> "+p
-nmap <c-y> "+y
-
-" Insert Mode Key Bindings
-imap <c-bs> <c-w>
