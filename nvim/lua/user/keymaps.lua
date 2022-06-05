@@ -18,6 +18,9 @@ keymap('n', '<leader>P', [[<cmd>lua require('telescope.builtin').find_files({ no
 keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
 keymap('n', '<leader>vs', ':source ~/.config/nvim/init.lua<CR>')
 
+-- Remove highlighting
+keymap('n', '<leader>h', ':noh<CR>')
+
 -- Open nonexistent files
 keymap('', 'gf', ':edit <cfile><CR>')
 
