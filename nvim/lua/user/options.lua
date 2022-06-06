@@ -28,3 +28,4 @@ vim.o.redrawtime = 10000        -- Allow more time for loading syntax on large f
 vim.o.showmode = false
 vim.o.fillchars = 'eob: '
 vim.o.hlsearch = false
+vim.o.signcolumn = 'yes'
