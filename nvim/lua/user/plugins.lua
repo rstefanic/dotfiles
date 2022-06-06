@@ -13,6 +13,7 @@ Plug('nvim-telescope/telescope-fzf-native.nvim', { run = 'make' });
 Plug('nvim-telescope/telescope-live-grep-raw.nvim');
 Plug('nvim-telescope/telescope.nvim');
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' });
+Plug('kyazdani42/nvim-web-devicons');
 
 Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' });
 
