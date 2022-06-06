@@ -13,6 +13,8 @@ vim.g.maplocalleader = ' '
 -- Telescope bindings
 keymap('n', '<leader>p', [[<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>]])
 keymap('n', '<leader>P', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, hidden = true, prompt_tile = 'All Files' })<CR>]])
+keymap('n', '<leader>ps', [[<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>]])
+keymap('n', '<C-p>', [[<cmd>lua require('telescope.builtin').git_files()<CR>]])
 
 -- Init edit and sourcing
 keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
