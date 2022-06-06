@@ -21,10 +21,9 @@ vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 vim.o.clipboard = 'unnamedplus'
 vim.o.confirm = true
-vim.o.backup = true
-vim.o.backupdir = vim.fn.stdpath 'data' .. '/backup//'
+vim.o.backup = false
+vim.o.swapfile = false
 vim.o.updatetime = 250          -- Decrease CursorHold delay
 vim.o.redrawtime = 10000        -- Allow more time for loading syntax on large files
 vim.o.showmode = false
 vim.o.fillchars = 'eob: '
-
