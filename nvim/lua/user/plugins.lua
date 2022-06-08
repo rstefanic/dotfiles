@@ -17,6 +17,8 @@ Plug('kyazdani42/nvim-web-devicons');
 
 Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' });
 
+Plug('tpope/vim-fugitive');
+
 vim.call('plug#end')
 
 require'nvim-treesitter.configs'.setup {
