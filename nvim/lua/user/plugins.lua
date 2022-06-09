@@ -19,6 +19,8 @@ Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' })
 
 Plug('tpope/vim-fugitive');
 
+Plug('vim-airline/vim-airline')
+
 vim.call('plug#end')
 
 require'nvim-treesitter.configs'.setup {
