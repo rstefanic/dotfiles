@@ -16,6 +16,9 @@ keymap('n', '<leader>P', [[<cmd>lua require('telescope.builtin').find_files({ no
 keymap('n', '<leader>ps', [[<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>]])
 keymap('n', '<C-p>', [[<cmd>lua require('telescope.builtin').git_files()<CR>]])
 
+-- Coc bindings
+keymap('n', '<leader>cd', ':CocDiagnostics<CR>')
+
 -- Init edit and sourcing
 keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
 keymap('n', '<leader>vs', ':source ~/.config/nvim/init.lua<CR>')
