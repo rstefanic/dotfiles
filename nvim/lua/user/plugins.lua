@@ -4,7 +4,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug('neoclide/coc.nvim', {['branch'] = 'master', ['do'] = 'yarn install --frozen-lockfile' })
 
-Plug('sainnhe/everforest');
+Plug('gruvbox-community/gruvbox');
 
 -- Telescope
 Plug('nvim-lua/plenary.nvim');
@@ -30,6 +30,6 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
-vim.cmd("let g:everforest_background = 'hard'");
-vim.cmd("let g:everforest_better_performance = 1");
-vim.cmd('colorscheme everforest')
+vim.cmd('let g:gruvbox_contrast_dark = "hard"')
+vim.cmd('let g:airline_theme="gruvbox"');
+vim.cmd('colorscheme gruvbox')
