@@ -4,7 +4,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug('neoclide/coc.nvim', {['branch'] = 'master', ['do'] = 'yarn install --frozen-lockfile' })
 
-Plug('gruvbox-community/gruvbox');
+Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
 
 -- Telescope
 Plug('nvim-lua/plenary.nvim');
@@ -20,6 +20,7 @@ Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' })
 Plug('tpope/vim-fugitive');
 
 Plug('vim-airline/vim-airline')
+Plug('vim-airline/vim-airline-themes')
 
 vim.call('plug#end')
 
@@ -30,6 +31,8 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
-vim.cmd('let g:gruvbox_contrast_dark = "hard"')
-vim.cmd('let g:airline_theme="gruvbox"');
-vim.cmd('colorscheme gruvbox')
+vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+
+vim.cmd[[colorscheme tokyonight]]
