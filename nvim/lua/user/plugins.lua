@@ -4,6 +4,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug('neoclide/coc.nvim', {['branch'] = 'master', ['do'] = 'yarn install --frozen-lockfile' })
 
+Plug('gruvbox-community/gruvbox');
 Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
 
 -- Telescope
@@ -33,9 +34,6 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
-vim.g.tokyonight_style = "storm"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 require'treesitter-context'.setup{
     enable = true,
     max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -52,4 +50,6 @@ require'treesitter-context'.setup{
     },
 }
 
-vim.cmd[[colorscheme tokyonight]]
+vim.opt.background = "dark" 
+vim.cmd[[let g:gruvbox_contrast_dark = "hard"]]
+vim.cmd[[colorscheme gruvbox]]
