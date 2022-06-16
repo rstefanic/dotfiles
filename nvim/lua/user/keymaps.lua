@@ -17,6 +17,11 @@ keymap('n', '<leader>ps', [[<cmd>lua require('telescope.builtin').grep_string({ 
 keymap('n', '<C-p>', [[<cmd>lua require('telescope.builtin').git_files()<CR>]])
 
 -- Coc bindings
+keymap('n', 'gd', '<Plug>(coc-definition)')
+keymap('n', 'gy', '<Plug>(coc-type-definition)')
+keymap('n', 'gi', '<Plug>(coc-implementation)') keymap('n', 'gr', '<Plug>(coc-references)')
+keymap('n', '[g', '<Plug>(coc-diagnostic-prev)')
+keymap('n', ']g', '<Plug>(coc-diagnostic-next)')
 keymap('n', '<leader>cd', ':CocDiagnostics<CR>')
 
 -- Init edit and sourcing
