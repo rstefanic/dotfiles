@@ -52,5 +52,7 @@ keymap('i', '<C-k>', '<Esc>:move .-2<CR>==gi')
 keymap('x', '<C-j>', ":move '>+1<CR>gv-gv")
 keymap('x', '<C-k>', ":move '<-2<CR>gv-gv")
 
+keymap('n', '<leader>pf', ':Ex<CR>');
+
 -- Ripgrep search
 keymap('n', '<leader>rg', ":!rg -i")
