@@ -28,7 +28,7 @@ Plug('vim-airline/vim-airline-themes')
 vim.call('plug#end')
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = { "c", "lua", "cpp", "php", "css", "html", "vue" },
+    ensure_installed = { "c", "lua", "cpp", "php", "css", "html", "vue", "go" },
     highlight = {
         enable = true
     }
