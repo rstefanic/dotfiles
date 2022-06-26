@@ -4,8 +4,9 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug('neoclide/coc.nvim', {['branch'] = 'master', ['do'] = 'yarn install --frozen-lockfile' })
 
-Plug('gruvbox-community/gruvbox');
+Plug('gruvbox-community/gruvbox')
 Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
+Plug('ayu-theme/ayu-vim')
 
 -- Telescope
 Plug('nvim-lua/plenary.nvim');
@@ -50,6 +51,16 @@ require'treesitter-context'.setup{
     },
 }
 
-vim.opt.background = "dark" 
-vim.cmd[[let g:gruvbox_contrast_dark = "hard"]]
-vim.cmd[[colorscheme gruvbox]]
+-- Load the colorscheme
+vim.opt.background = "dark"
+vim.g.gruvbox_invert_selection = '0'
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+vim.cmd[[colorscheme tokyonight]]
+
+-- Transparent Background
+vim.api.nvim_set_hl(0, "Normal", {
+    bg = "none"
+})
