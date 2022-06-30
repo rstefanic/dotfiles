@@ -16,6 +16,12 @@ keymap('n', '<leader>P', [[<cmd>lua require('telescope.builtin').find_files({ no
 keymap('n', '<leader>ps', [[<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>]])
 keymap('n', '<C-p>', [[<cmd>lua require('telescope.builtin').git_files()<CR>]])
 
+-- LuaSnip bindings
+keymap('i', '<Tab>', [[luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>']], { noremap = false, expr = true });
+keymap('i', '<S-Tab>', [[<cmd>lua require'luasnip'.jump(-1)<CR>]]);
+keymap('s', '<Tab>', [[<cmd>lua require('luasnip').jump(1)<CR>]]);
+keymap('s', '<S-Tab>', [[<cmd>lua require('luasnip').jump(-1)<CR>]]);
+
 -- Coc bindings
 keymap('n', 'gd', '<Plug>(coc-definition)')
 keymap('n', 'gy', '<Plug>(coc-type-definition)')
