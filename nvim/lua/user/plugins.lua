@@ -4,6 +4,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug('neoclide/coc.nvim', {['branch'] = 'master', ['do'] = 'yarn install --frozen-lockfile' })
 
+-- Themes
 Plug('gruvbox-community/gruvbox')
 Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
 Plug('ayu-theme/ayu-vim')
@@ -16,6 +17,7 @@ Plug('nvim-telescope/telescope-live-grep-raw.nvim');
 Plug('nvim-telescope/telescope.nvim');
 Plug('kyazdani42/nvim-web-devicons');
 
+-- Treesitter
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' });
 Plug('nvim-treesitter/nvim-treesitter-context');
 
@@ -25,6 +27,8 @@ Plug('tpope/vim-fugitive');
 
 Plug('vim-airline/vim-airline')
 Plug('vim-airline/vim-airline-themes')
+
+Plug('L3MON4D3/LuaSnip')
 
 vim.call('plug#end')
 
