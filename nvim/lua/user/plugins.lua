@@ -9,9 +9,12 @@ Plug('ellisonleao/gruvbox.nvim')
 Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
 Plug('ayu-theme/ayu-vim')
 
+-- Lualine
+Plug('nvim-lualine/lualine.nvim')
+Plug('kyazdani42/nvim-web-devicons');
+
 -- Telescope
 Plug('nvim-lua/plenary.nvim');
-Plug('kyazdani42/nvim-web-devicons');
 Plug('nvim-telescope/telescope-fzf-native.nvim', { run = 'make' });
 Plug('nvim-telescope/telescope-live-grep-raw.nvim');
 Plug('nvim-telescope/telescope.nvim');
@@ -24,9 +27,6 @@ Plug('nvim-treesitter/nvim-treesitter-context');
 Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' });
 
 Plug('tpope/vim-fugitive');
-
-Plug('vim-airline/vim-airline')
-Plug('vim-airline/vim-airline-themes')
 
 Plug('L3MON4D3/LuaSnip')
 
