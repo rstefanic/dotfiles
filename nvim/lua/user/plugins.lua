@@ -5,7 +5,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug('neoclide/coc.nvim', {['branch'] = 'master', ['do'] = 'yarn install --frozen-lockfile' })
 
 -- Themes
-Plug('gruvbox-community/gruvbox')
+Plug('ellisonleao/gruvbox.nvim')
 Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
 Plug('ayu-theme/ayu-vim')
 

@@ -1,8 +1,19 @@
 vim.opt.background = "dark"
 
 -- Gruvbox Colors
-vim.g.gruvbox_invert_selection = '0'
-vim.g.gruvbox_italics = 1
+require("gruvbox").setup({
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = true, -- will make italic comments and special strings
+  inverse = true, -- invert background for search, diffs, statuslines and errors
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  contrast = "hard",
+  overrides = {},
+})
 
 -- Tokyonight colors
 vim.g.tokyonight_transparent = true
