@@ -24,7 +24,9 @@ Plug('kyazdani42/nvim-web-devicons');
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' });
 Plug('nvim-treesitter/nvim-treesitter-context');
 
-Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' });
+-- Language Plugins
+Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' })
+Plug('rust-lang/rust.vim')
 
 Plug('tpope/vim-fugitive');
 
