@@ -1,35 +1,36 @@
-local Plug = vim.fn['plug#']
+vim.cmd [[packadd packer.nvim]]
 
-vim.call('plug#begin', '~/.config/nvim/plugged')
+return require('packer').startup(function(use)
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-Plug('neoclide/coc.nvim', {['branch'] = 'master', ['do'] = 'yarn install --frozen-lockfile' })
+    -- Theme
+    use 'morhetz/gruvbox'
 
--- Themes
-Plug('ellisonleao/gruvbox.nvim')
-Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
-Plug('ayu-theme/ayu-vim')
+    -- COC
+    use { 'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile' }
 
--- Lualine
-Plug('nvim-lualine/lualine.nvim')
-Plug('kyazdani42/nvim-web-devicons');
+    -- Lualine
+    use 'nvim-lualine/lualine.nvim'
+    use 'kyazdani42/nvim-web-devicons'
 
--- Telescope
-Plug('nvim-lua/plenary.nvim');
-Plug('nvim-telescope/telescope-fzf-native.nvim', { run = 'make' });
-Plug('nvim-telescope/telescope-live-grep-raw.nvim');
-Plug('nvim-telescope/telescope.nvim');
-Plug('kyazdani42/nvim-web-devicons');
+    -- Telescope
+    use 'nvim-lua/plenary.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use 'nvim-telescope/telescope-live-grep-raw.nvim'
+    use 'nvim-telescope/telescope.nvim'
 
--- Treesitter
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' });
-Plug('nvim-treesitter/nvim-treesitter-context');
+    -- Treesitter
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'nvim-treesitter/nvim-treesitter-context'
 
--- Language Plugins
-Plug('yaegassy/coc-intelephense', { ['do'] = 'yarn install --frozen-lockfile' })
-Plug('rust-lang/rust.vim')
+    -- Language Plugins
+    use { 'yaegassy/coc-intelephense', run = 'yarn install --frozen-lockfile' }
+    use 'rust-lang/rust.vim'
 
-Plug('tpope/vim-fugitive');
+    -- Fugitive
+    use 'tpope/vim-fugitive'
 
-Plug('L3MON4D3/LuaSnip')
-
-vim.call('plug#end')
+    -- Snippets
+    use 'L3MON4D3/LuaSnip'
+end)
