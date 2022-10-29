@@ -25,7 +25,8 @@ keymap('s', '<S-Tab>', [[<cmd>lua require('luasnip').jump(-1)<CR>]]);
 -- Coc bindings
 keymap('n', 'gd', '<Plug>(coc-definition)')
 keymap('n', 'gy', '<Plug>(coc-type-definition)')
-keymap('n', 'gi', '<Plug>(coc-implementation)') keymap('n', 'gr', '<Plug>(coc-references)')
+keymap('n', 'gi', '<Plug>(coc-implementation)')
+keymap('n', 'gr', '<Plug>(coc-references)')
 keymap('n', '[g', '<Plug>(coc-diagnostic-prev)')
 keymap('n', ']g', '<Plug>(coc-diagnostic-next)')
 keymap('n', '<leader>cd', ':CocDiagnostics<CR>')
