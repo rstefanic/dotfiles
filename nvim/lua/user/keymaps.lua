@@ -30,6 +30,9 @@ keymap('n', 'gr', '<Plug>(coc-references)')
 keymap('n', '[g', '<Plug>(coc-diagnostic-prev)')
 keymap('n', ']g', '<Plug>(coc-diagnostic-next)')
 keymap('n', '<leader>cd', ':CocDiagnostics<CR>')
+keymap("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : "<TAB>"', {silent = true, noremap = true, expr = true})
+keymap("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], {silent = true, noremap = true, expr = true})
+keymap("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], {silent = true, noremap = true, expr = true})
 
 -- Init edit and sourcing
 keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
