@@ -9,6 +9,13 @@ return require('packer').startup(function(use)
 
     -- Theme
     use 'morhetz/gruvbox'
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        config = function()
+            vim.cmd('colorscheme rose-pine')
+        end
+    })
 
     -- COC
     use { 'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile' }
