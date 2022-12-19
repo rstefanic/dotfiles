@@ -43,6 +43,8 @@ return require('packer').startup(function(use)
     }
     use 'nvim-treesitter/nvim-treesitter-context'
 
+    use 'numToStr/Comment.nvim'
+
     -- Language Plugins
     use { 'yaegassy/coc-intelephense', run = 'yarn install --frozen-lockfile' }
     use 'rust-lang/rust.vim'
