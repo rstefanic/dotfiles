@@ -31,7 +31,16 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope.nvim'
 
     -- Treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+          pcall(require('nvim-treesitter.install').update { with_sync = true })
+        end,
+    }
+    use { -- Additional text objects via treesitter
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        after = 'nvim-treesitter',
+    }
     use 'nvim-treesitter/nvim-treesitter-context'
 
     -- Language Plugins
