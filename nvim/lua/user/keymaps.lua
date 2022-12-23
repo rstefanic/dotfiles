@@ -19,25 +19,6 @@ keymap('n', '<C-p>', [[<cmd>lua require('telescope.builtin').git_files()<CR>]])
 -- Fugitive
 keymap('n', '<leader>gs', '<cmd>Git<CR>');
 
--- LuaSnip bindings
-keymap('i', '<Tab>', [[luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>']], { noremap = false, expr = true });
-keymap('i', '<S-Tab>', [[<cmd>lua require'luasnip'.jump(-1)<CR>]]);
-keymap('s', '<Tab>', [[<cmd>lua require('luasnip').jump(1)<CR>]]);
-keymap('s', '<S-Tab>', [[<cmd>lua require('luasnip').jump(-1)<CR>]]);
-
--- Coc bindings
-keymap('n', 'gd', '<Plug>(coc-definition)')
-keymap('n', 'gy', '<Plug>(coc-type-definition)')
-keymap('n', 'gi', '<Plug>(coc-implementation)')
-keymap('n', 'gr', '<Plug>(coc-references)')
-keymap('n', '[g', '<Plug>(coc-diagnostic-prev)')
-keymap('n', ']g', '<Plug>(coc-diagnostic-next)')
-keymap('n', '<leader>rn', '<Plug>(coc-rename)')
-keymap('n', '<leader>cd', ':CocDiagnostics<CR>')
-keymap("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : "<TAB>"', {silent = true, noremap = true, expr = true})
-keymap("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], {silent = true, noremap = true, expr = true})
-keymap("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], {silent = true, noremap = true, expr = true})
-
 -- Init edit and sourcing
 keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
 keymap('n', '<leader>vs', ':source ~/.config/nvim/init.lua<CR>')

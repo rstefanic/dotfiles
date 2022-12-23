@@ -17,8 +17,22 @@ return require('packer').startup(function(use)
         end
     })
 
-    -- COC
-    use { 'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile' }
+    use { -- LSP Configuration & Plugins
+        'neovim/nvim-lspconfig',
+        requires = {
+          -- Automatically install LSPs to stdpath for neovim
+          'williamboman/mason.nvim',
+          'williamboman/mason-lspconfig.nvim',
+
+          -- Useful status updates for LSP
+          'j-hui/fidget.nvim',
+        },
+    }
+
+    use { -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    }
 
     -- Lualine
     use 'nvim-lualine/lualine.nvim'
@@ -46,12 +60,8 @@ return require('packer').startup(function(use)
     use 'numToStr/Comment.nvim'
 
     -- Language Plugins
-    use { 'yaegassy/coc-intelephense', run = 'yarn install --frozen-lockfile' }
     use 'rust-lang/rust.vim'
 
     -- Fugitive
     use 'tpope/vim-fugitive'
-
-    -- Snippets
-    use 'L3MON4D3/LuaSnip'
 end)
