@@ -64,4 +64,8 @@ return require('packer').startup(function(use)
 
     -- Fugitive
     use 'tpope/vim-fugitive'
+
+    -- Tmux navigation integration
+    use 'christoomey/vim-tmux-navigator'
 end)
+
