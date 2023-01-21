@@ -1,3 +1,6 @@
-## My dotfiles
+## Rob's dotfiles
 
-Includes my nixpkgs, zsh, vim, and sublime config.
+- alacritty
+- tmux
+- neovim
+- zsh
