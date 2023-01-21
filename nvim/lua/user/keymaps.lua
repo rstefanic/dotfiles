@@ -33,7 +33,13 @@ keymap('', 'gf', ':edit <cfile><CR>')
 keymap('v', '<', '<gv')
 keymap('v', '>', '>gv')
 
--- Resize with arrows
+-- Split windows
+keymap('n', 'ss', ':split<Return><C-w>w')
+keymap('n', 'sv', ':vsplit<Return><C-w>w')
+keymap('n', 'sc', '<C-w>c')
+keymap('n', 'so', '<C-w>o')
+
+-- Resize windows with arrows
 keymap('n', '<C-Up>', ':resize +2<CR>')
 keymap('n', '<C-Down>', ':resize -2<CR>')
 keymap('n', '<C-Left>', ':vertical resize -2<CR>')
