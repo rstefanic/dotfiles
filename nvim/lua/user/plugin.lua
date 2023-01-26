@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
     use 'github/copilot.vim'
 
     -- Theme
-    use 'morhetz/gruvbox'
+    use "EdenEast/nightfox.nvim"
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
