@@ -1,12 +1,4 @@
-require('rose-pine').setup({
-    dark_variant = 'main',
-    bold_vert_split = false,
-    dim_nc_background = false,
-    disable_background = false,
-    disable_float_background = false,
-})
-
-vim.cmd.colorscheme("terafox");
+vim.cmd.colorscheme("nordfox");
 
 function transparent()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

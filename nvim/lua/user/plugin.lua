@@ -9,13 +9,6 @@ return require('packer').startup(function(use)
 
     -- Theme
     use "EdenEast/nightfox.nvim"
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
 
     use { -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
