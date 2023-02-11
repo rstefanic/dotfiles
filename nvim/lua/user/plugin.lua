@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
 
     -- Fugitive
     use 'tpope/vim-fugitive'
+    use 'airblade/vim-gitgutter'
 
     -- Tmux navigation integration
     use 'christoomey/vim-tmux-navigator'
