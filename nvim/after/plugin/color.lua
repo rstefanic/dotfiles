@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("nordfox");
+vim.cmd.colorscheme "catppuccin-frappe"
 
 function transparent()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
