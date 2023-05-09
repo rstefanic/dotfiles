@@ -45,82 +45,36 @@ shell:
   args:
     - --login
 
+# Colors (Kanagawa Dragon)
 colors:
-    # Default colors
-    primary:
-        background: "#303446" # base
-        foreground: "#C6D0F5" # text
-        # Bright and dim foreground colors
-        dim_foreground: "#C6D0F5" # text
-        bright_foreground: "#C6D0F5" # text
+  primary:
+    background: '0x181616'
+    foreground: '0xc5c9c5'
 
-    # Cursor colors
-    cursor:
-        text: "#303446" # base
-        cursor: "#F2D5CF" # rosewater
-    vi_mode_cursor:
-        text: "#303446" # base
-        cursor: "#BABBF1" # lavender
+  normal:
+    black: '0x0d0c0c'
+    blue: '0x8ba4b0'
+    cyan: '0x8ea4a2'
+    green: '0x8a9a7b'
+    magenta: '0xa292a3'
+    red: '0xc4746e'
+    white: '0xC8C093'
+    yellow: '0xc4b28a'
 
-    # Search colors
-    search:
-        matches:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
-        focused_match:
-            foreground: "#303446" # base
-            background: "#A6D189" # green
-        footer_bar:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
+  bright:
+    black: '0xa6a69c'
+    blue: '0x7FB4CA'
+    cyan: '0x7AA89F'
+    green: '0x87a987'
+    magenta: '0x938AA9'
+    red: '0xE46876'
+    white: '0xc5c9c5'
+    yellow: '0xE6C384'
 
-    # Keyboard regex hints
-    hints:
-        start:
-            foreground: "#303446" # base
-            background: "#E5C890" # yellow
-        end:
-            foreground: "#303446" # base
-            background: "#A5ADCE" # subtext0
+  selection:
+    background: '0x2d4f67'
+    foreground: '0xc8c093'
 
-    # Selection colors
-    selection:
-        text: "#303446" # base
-        background: "#F2D5CF" # rosewater
-
-    # Normal colors
-    normal:
-        black: "#51576D" # surface1
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#B5BFE2" # subtext1
-
-    # Bright colors
-    bright:
-        black: "#626880" # surface2
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#A5ADCE" # subtext0
-
-    # Dim colors
-    dim:
-        black: "#51576D" # surface1
-        red: "#E78284" # red
-        green: "#A6D189" # green
-        yellow: "#E5C890" # yellow
-        blue: "#8CAAEE" # blue
-        magenta: "#F4B8E4" # pink
-        cyan: "#81C8BE" # teal
-        white: "#B5BFE2" # subtext1
-
-    indexed_colors:
-        - { index: 16, color: "#EF9F76" }
-        - { index: 17, color: "#F2D5CF" }
+  indexed_colors:
+    - { index: 16, color: '0xffa066' }
+    - { index: 17, color: '0xff5d62' }
