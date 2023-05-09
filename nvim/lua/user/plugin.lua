@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
     use 'github/copilot.vim'
 
     -- Theme
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use { "rebelot/kanagawa.nvim" }
 
     use { -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
