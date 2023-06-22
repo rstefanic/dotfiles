@@ -61,5 +61,7 @@ return require('packer').startup(function(use)
 
     -- Tmux navigation integration
     use 'christoomey/vim-tmux-navigator'
+
+    use 'tjdevries/sPoNGe-BoB.NvIm'
 end)
 
