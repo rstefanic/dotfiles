@@ -1,4 +1,4 @@
-vim.cmd.colorscheme "kanagawa-dragon"
+vim.cmd.colorscheme "catppuccin-latte"
 
 function transparent()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
