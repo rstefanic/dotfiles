@@ -19,7 +19,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.wildmode = 'longest:full,full'
 vim.opt.guicursor = "i:blinkon1"
 vim.opt.background = "dark"
-vim.opt.colorcolumn = "80"
 
 -- Tabs and what not
 vim.opt.tabstop = 4
