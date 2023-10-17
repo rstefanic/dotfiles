@@ -59,7 +59,7 @@ require('lspconfig').intelephense.setup({
   capabilities = capabilities,
 })
 
-local rest = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'gopls', 'intelephense' }
+local rest = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'gopls', 'intelephense', 'zls' }
 
 for _, lsp in ipairs(rest) do
   require('lspconfig')[lsp].setup {
