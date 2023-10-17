@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- Theme
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'morhetz/gruvbox'
 
     use { -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
