@@ -4,9 +4,6 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- Copilot
-    use 'github/copilot.vim'
-
     -- Theme
     use { "catppuccin/nvim", as = "catppuccin" }
 
