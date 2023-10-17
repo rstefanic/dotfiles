@@ -1,0 +1,46 @@
+window:
+  padding:
+    x: 10
+    y: 10
+
+scrolling:
+  history: 100000
+  multiplier: 3
+
+font:
+  offset:
+    y: 1
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrains Mono
+    style: Bold
+  italic:
+    family: JetBrains Mono
+    style: Italic
+  bold_italic:
+    family: JetBrains Mono
+    style: Bold Italic
+  size: 14.0
+
+draw_bold_text_with_bright_colors: true
+
+bell:
+  animation: EaseOutExpo
+  duration: 200
+  color: '0xffffff'
+
+# Allow terminal applications to change Alacritty’s window title.
+window.dynamic_title: true
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+live_config_reload: true
+
+shell:
+  program: /bin/zsh
+  args:
+    - --login
