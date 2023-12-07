@@ -18,3 +18,13 @@ vim.keymap.set('n', '<leader>/', function()
     previewer = false,
   })
 end, { desc = 'Search in current buffer' })
+
+
+require('telescope').setup({
+    defaults = {
+        layout_config = {
+            prompt_position = 'top',
+        },
+        sorting_strategy = 'ascending',
+    }
+})
