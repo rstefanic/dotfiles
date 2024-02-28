@@ -720,5 +720,20 @@ cmp.setup {
   },
 }
 
+vim.api.nvim_set_hl(0, 'TODOTRACK', { bg = 'Yellow', fg ='Black' })
+vim.api.nvim_set_hl(0, 'DONETRACK', { bg = 'green' })
+vim.api.nvim_set_hl(0, 'REDTRACK', { bg = 'red' })
+vim.api.nvim_set_hl(0, 'TRASHTRACK', { bg = 'Black', fg = 'DarkGray' })
+vim.api.nvim_set_hl(0, 'TAGTRACK', { bg = 'blue' })
+vim.api.nvim_set_hl(0, 'PUSHTRACK', { bg = 'DarkGray', fg = 'Gray' })
+
+vim.fn.matchadd("TODOTRACK", "\\[ \\]")
+vim.fn.matchadd("DONETRACK","\\[x\\]")
+vim.fn.matchadd("REDTRACK", "\\[-\\]")
+vim.fn.matchadd("TAGTRACK", "\\[^\\]")
+vim.fn.matchadd("PUSHTRACK", "\\[>\\]")
+vim.fn.matchadd("TRASHTRACK", "\\[v\\]")
+vim.fn.matchadd("PUSHTRACK", "\\[<\\]")
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
