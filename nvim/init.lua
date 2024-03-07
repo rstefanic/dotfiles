@@ -7,9 +7,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Disable fancy zenbones stuff
-vim.g.zenbones_compat = 1
-
 -- General Config
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -276,10 +273,10 @@ require('lazy').setup({
   },
 
   { -- Colorscheme
-    'mcchrish/zenbones.nvim',
+    'p00f/alabaster.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'zenbones'
+      vim.cmd.colorscheme 'alabaster'
     end,
   },
 
