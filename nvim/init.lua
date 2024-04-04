@@ -53,6 +53,9 @@ vim.opt.undofile = true
 vim.opt.backup = false
 vim.opt.swapfile = false
 
+-- netrw
+vim.g.netrw_banner = 0
+
 -- Opening a PHP file will turn off autoindent and smartindent because the default PHP indentation
 -- plugin sets indentexpr and overrides these settings. This overwrites the default indentation
 -- plugin settings and resets smartindent and autoindent back to the way I like it. :)
