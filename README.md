@@ -1,6 +1,6 @@
 ## Rob's dotfiles
 
-- alacritty
-- tmux
 - neovim
+- tmux
+- wezterm
 - zsh
