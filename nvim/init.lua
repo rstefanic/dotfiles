@@ -56,6 +56,9 @@ vim.opt.swapfile = false
 -- netrw
 vim.g.netrw_banner = 0
 
+-- committa
+vim.g.committia_min_window_width = 80
+
 -- Opening a PHP file will turn off autoindent and smartindent because the default PHP indentation
 -- plugin sets indentexpr and overrides these settings. This overwrites the default indentation
 -- plugin settings and resets smartindent and autoindent back to the way I like it. :)
@@ -155,6 +158,7 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'rhysd/committia.vim',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
