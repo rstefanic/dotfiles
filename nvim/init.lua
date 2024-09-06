@@ -111,12 +111,6 @@ keymap('n', 'sv', ':vsplit<Return><C-w>w')
 keymap('n', 'sc', '<C-w>c')
 keymap('n', 'so', '<C-w>o')
 
--- Resize windows with arrows
-keymap('n', '<C-Up>', ':resize +2<CR>')
-keymap('n', '<C-Down>', ':resize -2<CR>')
-keymap('n', '<C-Left>', ':vertical resize -2<CR>')
-keymap('n', '<C-Right>', ':vertical resize +2<CR>')
-
 -- Move text up and down
 keymap('n', '<C-j>', ':move .+1<CR>==')
 keymap('n', '<C-k>', ':move .-2<CR>==')
