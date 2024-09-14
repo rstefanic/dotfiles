@@ -746,5 +746,14 @@ vim.fn.matchadd("PUSHTRACK", "\\[>\\]")
 vim.fn.matchadd("TRASHTRACK", "\\[v\\]")
 vim.fn.matchadd("PUSHTRACK", "\\[<\\]")
 
+vim.api.nvim_create_autocmd('filetype', {
+  pattern = 'netrw',
+  desc = 'Remove <c-l> and <c-h> bindings in netrw',
+  callback = function()
+    vim.keymap.set('n', '<c-h>', require('smart-splits').move_cursor_left, {noremap = true, buffer = true, silent = true})
+    vim.keymap.set('n', '<c-l>', require('smart-splits').move_cursor_right, {remap = true, buffer = true, silent = true})
+  end
+})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
