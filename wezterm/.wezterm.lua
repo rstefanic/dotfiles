@@ -41,6 +41,13 @@ config.cursor_blink_rate = 0
 config.font_size = 16
 config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
 
+config.window_padding = {
+    top = 0,
+    right = 0,
+    left = 0,
+    bottom = 0,
+}
+
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.keys = {
     {
