@@ -1,0 +1,22 @@
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+
+keybind = ctrl+a>r=reload_config
+keybind = ctrl+a>n=new_window
+keybind = ctrl+a>t=new_tab
+
+# Splits
+keybind = ctrl+a>\=new_split:right
+keybind = ctrl+a>-=new_split:down
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+h=goto_split:left
+
+# Split Resize
+keybind = alt+h=resize_split:left,10
+keybind = alt+j=resize_split:down,10
+keybind = alt+k=resize_split:up,10
+keybind = alt+l=resize_split:right,10
+
