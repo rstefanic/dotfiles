@@ -13,6 +13,7 @@ keybind = ctrl+l=goto_split:right
 keybind = ctrl+k=goto_split:top
 keybind = ctrl+j=goto_split:bottom
 keybind = ctrl+h=goto_split:left
+keybind = ctrl+a>z=toggle_split_zoom
 
 # Split Resize
 keybind = alt+h=resize_split:left,10
