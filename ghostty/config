@@ -7,7 +7,7 @@ keybind = ctrl+a>n=new_window
 keybind = ctrl+a>t=new_tab
 
 # Splits
-keybind = ctrl+a>\=new_split:right
+keybind = ctrl+a>shift+\=new_split:right
 keybind = ctrl+a>-=new_split:down
 keybind = ctrl+l=goto_split:right
 keybind = ctrl+k=goto_split:top
