@@ -1,12 +1,9 @@
 export PATH=~/.composer/vendor/bin:$PATH
-export ZSH="/Users/robert/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
 ZSH_DISABLE_COMPFIX="true"
 
 plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
 
 alias pu="clear && ./vendor/bin/phpunit"
 alias pf="clear && ./vendor/bin/phpunit --filter"
