@@ -2,5 +2,6 @@
 
 - neovim
 - tmux
-- wezterm
+- git
+- ghostty
 - zsh
