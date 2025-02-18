@@ -160,6 +160,9 @@ require('lazy').setup({
   -- Super important plugins
   'tjdevries/sPoNGe-BoB.NvIm',
 
+  -- Tmux navigation
+  'christoomey/vim-tmux-navigator',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
