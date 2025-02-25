@@ -17,5 +17,6 @@ alias glr="git lr"
 alias glra="git lra"
 alias glg="git lg"
 alias nah="git restore -- ."
+alias vim=nvim
 
 source ~/.scripts/docker-psql
