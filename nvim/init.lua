@@ -36,9 +36,6 @@ function keymap(mode, lhs, rhs, opts)
   )
 end
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- Fugitive
 keymap('n', '<leader>gs', '<cmd>Git<CR>');
 
