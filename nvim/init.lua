@@ -59,6 +59,13 @@ vim.g.netrw_banner = 0
 -- committa
 vim.g.committia_min_window_width = 80
 
+-- Neoformat option to use project level prettier
+vim.g.neoformat_try_node_exe = 1
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.js", "*.ts", "*.vue" },
+  command = "Neoformat prettier",
+})
+
 -- Opening a PHP file will turn off autoindent and smartindent because the default PHP indentation
 -- plugin sets indentexpr and overrides these settings. This overwrites the default indentation
 -- plugin settings and resets smartindent and autoindent back to the way I like it. :)
@@ -198,6 +205,9 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
+
+  -- vim-prettier formatting
+  'sbdchd/neoformat',
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
