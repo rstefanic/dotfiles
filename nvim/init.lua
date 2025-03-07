@@ -1,60 +1,4 @@
---[[
-=====================================================================
-========================= Basic Vim Config ==========================
-=====================================================================
---]]
-
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- General Config
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.termguicolors = true
-vim.opt.hidden = true
-vim.opt.title = true
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.mouse = 'a'
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.confirm = true
-vim.opt.updatetime = 250          -- Decrease CursorHold delay
-vim.opt.timeoutlen = 300
-vim.opt.redrawtime = 10000        -- Allow more time for loading syntax on large files
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.showmode = false
-vim.opt.hlsearch = false
-vim.opt.signcolumn = 'yes'
-vim.opt.wildmode = 'longest:full,full'
-vim.opt.guicursor = "i:blinkon1"
-vim.opt.background = "dark"
-
--- Tabs and what not
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.autoindent = true
-vim.opt.cindent = true
-vim.opt.breakindent = true
-
--- Other text fun
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.wrap = false
-vim.opt.list = true
-vim.opt.listchars = 'tab:▸ ,trail:·'
-vim.opt.fillchars = 'eob: '
-
--- Backup, undo, and swap files
-vim.opt.undofile = true
-vim.opt.backup = false
-vim.opt.swapfile = false
-
--- netrw
-vim.g.netrw_banner = 0
+require 'settings'
 
 -- committa
 vim.g.committia_min_window_width = 80
@@ -635,21 +579,71 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   clangd = {},
-  gopls = {},
-  pyright = {},
-  rust_analyzer = {},
-  tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
-  intelephense = {},
-  zls = {},
-  hls = {},
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
       -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
       -- diagnostics = { disable = { 'missing-fields' } },
+    },
+  },
+  -- Vue 3
+  volar = {
+    init_options = {
+      vue = {
+        hybridMode = false,
+      },
+    },
+    settings = {
+      typescript = {
+        inlayHints = {
+          enumMemberValues = {
+            enabled = true,
+          },
+          functionLikeReturnTypes = {
+            enabled = true,
+          },
+          propertyDeclarationTypes = {
+            enabled = true,
+          },
+          parameterTypes = {
+            enabled = true,
+            suppressWhenArgumentMatchesName = true,
+          },
+          variableTypes = {
+            enabled = true,
+          },
+        },
+      },
+    },
+  },
+  -- TypeScript
+  ts_ls = {
+    init_options = {
+      plugins = {
+        {
+          name = '@vue/typescript-plugin',
+          location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+          languages = { 'vue' },
+        },
+      },
+    },
+    settings = {
+      typescript = {
+        tsserver = {
+          useSyntaxServer = false,
+        },
+        inlayHints = {
+          includeInlayParameterNameHints = 'all',
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayVariableTypeHints = true,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayEnumMemberValueHints = true,
+        },
+      },
     },
   },
 }
