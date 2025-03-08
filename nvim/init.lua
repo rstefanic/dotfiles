@@ -1,26 +1,12 @@
 require 'settings'
 require 'keymaps'
+require 'autocmds'
 
 -- committa
 vim.g.committia_min_window_width = 80
 
 -- Neoformat option to use project level prettier
 vim.g.neoformat_try_node_exe = 1
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.js", "*.ts", "*.vue" },
-  command = "Neoformat prettier",
-})
-
--- Opening a PHP file will turn off autoindent and smartindent because the default PHP indentation
--- plugin sets indentexpr and overrides these settings. This overwrites the default indentation
--- plugin settings and resets smartindent and autoindent back to the way I like it. :)
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "php",
-    callback = function()
-        vim.opt.smartindent = true
-        vim.opt.autoindent = true
-    end
-});
 
 
 --[[
@@ -278,16 +264,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
@@ -703,15 +679,6 @@ cmp.setup {
     { name = 'path' },
   },
 }
-
-vim.api.nvim_create_autocmd('filetype', {
-  pattern = 'netrw',
-  desc = 'Remove <c-l> and <c-h> bindings in netrw',
-  callback = function()
-    vim.keymap.set('n', '<c-h>', require('smart-splits').move_cursor_left, {noremap = true, buffer = true, silent = true})
-    vim.keymap.set('n', '<c-l>', require('smart-splits').move_cursor_right, {remap = true, buffer = true, silent = true})
-  end
-})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
