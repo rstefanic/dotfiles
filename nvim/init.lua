@@ -1,6 +1,6 @@
-require 'settings'
-require 'keymaps'
-require 'autocmds'
+require 'config.settings'
+require 'config.keymaps'
+require 'config.autocmds'
 
 -- committa
 vim.g.committia_min_window_width = 80
