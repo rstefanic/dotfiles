@@ -65,9 +65,6 @@ require('lazy').setup({
   -- vim-prettier formatting
   'sbdchd/neoformat',
 
-  -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
-
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -114,4 +111,5 @@ require('lazy').setup({
   require 'plugins.git',
   require 'plugins.colorscheme',
   require 'plugins.mini',
+  require 'plugins.which-key',
 }, {})
