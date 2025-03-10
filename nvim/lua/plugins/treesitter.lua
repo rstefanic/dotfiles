@@ -9,7 +9,22 @@ return {
       -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
       vim.defer_fn(function()
         require('nvim-treesitter.configs').setup {
-          ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'haskell' },
+          ensure_installed = {
+            'bash',
+            'c',
+            'cpp',
+            'go',
+            'haskell',
+            'javascript',
+            'lua',
+            'python',
+            'rust',
+            'tsx',
+            'typescript',
+            'vim',
+            'vimdoc',
+            'vue'
+          },
           auto_install = false,
           highlight = { enable = true },
           indent = { enable = true },
