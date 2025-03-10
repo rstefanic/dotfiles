@@ -28,8 +28,8 @@ return {
             hybridMode = true,
           },
           typescript = {
-            --
-            tsdk = '/path/to/node_modules/typescript/lib'
+            -- TODO: Add real path
+            -- tsdk = '/path/to/node_modules/typescript/lib'
           }
         },
         -- Use a local server and fall back to a global TypeScript Server installation
