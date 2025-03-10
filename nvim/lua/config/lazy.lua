@@ -98,15 +98,7 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    build = ':TSUpdate',
-  },
-
+  require 'plugins.treesitter',
   require 'plugins.autoformat',
   require 'plugins.git',
   require 'plugins.colorscheme',
