@@ -3,9 +3,6 @@ require 'config.lazy'
 require 'config.keymaps'
 require 'config.autocmds'
 
--- committa
-vim.g.committia_min_window_width = 80
-
 -- Neoformat option to use project level prettier
 vim.g.neoformat_try_node_exe = 1
 
