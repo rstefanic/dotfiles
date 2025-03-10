@@ -104,4 +104,6 @@ require('lazy').setup({
   require 'plugins.colorscheme',
   require 'plugins.mini',
   require 'plugins.which-key',
+  require 'plugins.oil',
+
 }, {})
