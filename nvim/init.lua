@@ -28,7 +28,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 require('telescope').setup {
   defaults = {
     layout_config = {
-        prompt_position = 'top',
+      prompt_position = 'top',
     },
     sorting_strategy = 'ascending',
     mappings = {
@@ -167,14 +167,6 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   clangd = {},
-  lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-      -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-      -- diagnostics = { disable = { 'missing-fields' } },
-    },
-  },
   -- Vue 3
   volar = {
     init_options = {
@@ -251,10 +243,6 @@ require('lspconfig').intelephense.setup({
   },
   capabilities = capabilities,
 })
-
-require('lspconfig')['hls'].setup{
-  filetypes = { 'haskell', 'lhaskell', 'cabal' }
-}
 
 -- Setup Smart Splits
 vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
