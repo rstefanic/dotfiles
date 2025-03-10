@@ -67,18 +67,6 @@ require('lazy').setup({
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
 
-  { -- Colorscheme
-    'Alligator/accent.vim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'accent'
-      vim.g.accent_no_bg = 1
-
-      -- Remove different SignColumn background color
-      vim.api.nvim_set_hl(0, 'SignColumn', { guibg=NONE })
-    end,
-  },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -137,6 +125,7 @@ require('lazy').setup({
 
   require 'plugins.autoformat',
   require 'plugins.git',
+  require 'plugins.colorscheme',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
