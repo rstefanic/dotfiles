@@ -15,8 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { 'mrjones2014/smart-splits.nvim' },
-
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -36,9 +34,8 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',        opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
-  -- Fuzzy Finder (files, lsp, etc)
   require 'plugins.treesitter',
   require 'plugins.cmp',
   require 'plugins.lsp',
@@ -50,5 +47,6 @@ require('lazy').setup({
   require 'plugins.oil',
   require 'plugins.neoformat',
   require 'plugins.telescope',
+  require 'plugins.smart-splits',
 
 }, {})
