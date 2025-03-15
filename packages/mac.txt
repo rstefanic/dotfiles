@@ -1,6 +1,0 @@
-fzf
-ghostty
-neovim
-npm
-ripgrep
-tmux
