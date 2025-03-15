@@ -1,6 +1,4 @@
-M = {}
-
-M.on_attach = function(_, bufnr)
+local function on_attach(_, bufnr)
   local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
@@ -37,7 +35,39 @@ M.on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
-M.lazy_import = {
+local function mason_lsp_setup(capabilities)
+  -- mason-lspconfig requires that these setup functions are called in this order
+  -- before setting up the servers.
+  require('mason').setup()
+  require('mason-lspconfig').setup()
+
+  local servers = {
+    clangd = {},
+  }
+
+  -- Setup neovim lua configuration
+  require('neodev').setup()
+
+  -- Ensure the servers above are installed
+  local mason_lspconfig = require 'mason-lspconfig'
+
+  mason_lspconfig.setup {
+    ensure_installed = vim.tbl_keys(servers),
+  }
+
+  mason_lspconfig.setup_handlers {
+    function(server_name)
+      require('lspconfig')[server_name].setup {
+        capabilities = capabilities,
+        on_attach = require('plugins.lsp').on_attach,
+        settings = servers[server_name],
+        filetypes = (servers[server_name] or {}).filetypes,
+      }
+    end,
+  }
+end
+
+return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -112,8 +142,8 @@ M.lazy_import = {
         },
         capabilities = capabilities,
       })
+
+      mason_lsp_setup(capabilities)
     end
   },
 }
-
-return M
