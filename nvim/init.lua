@@ -3,9 +3,6 @@ require 'config.lazy'
 require 'config.keymaps'
 require 'config.autocmds'
 
--- Neoformat option to use project level prettier
-vim.g.neoformat_try_node_exe = 1
-
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {

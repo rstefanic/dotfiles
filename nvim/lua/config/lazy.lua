@@ -43,9 +43,6 @@ require('lazy').setup({
     },
   },
 
-  -- vim-prettier formatting
-  'sbdchd/neoformat',
-
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -87,5 +84,6 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.which-key',
   require 'plugins.oil',
+  require 'plugins.neoformat',
 
 }, {})
