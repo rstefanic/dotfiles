@@ -27,23 +27,6 @@ require('lazy').setup({
   'christoomey/vim-tmux-navigator',
 
   {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds LSP completion capabilities
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-
-      -- Adds a number of user-friendly snippets
-      'rafamadriz/friendly-snippets',
-    },
-  },
-
-  {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
@@ -57,6 +40,7 @@ require('lazy').setup({
 
   -- Fuzzy Finder (files, lsp, etc)
   require 'plugins.treesitter',
+  require 'plugins.cmp',
   require 'plugins.lsp',
   require 'plugins.autoformat',
   require 'plugins.git',
