@@ -20,6 +20,7 @@
           pkgs.ripgrep
           pkgs.tmux
           pkgs.nodejs
+          pkgs.direnv
         ];
 
       # Necessary for using flakes on this system.

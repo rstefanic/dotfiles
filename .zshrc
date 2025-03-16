@@ -3,7 +3,10 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
 ZSH_DISABLE_COMPFIX="true"
 
-plugins=(git)
+plugins=(
+    git
+    direnv
+)
 
 source $ZSH/oh-my-zsh.sh
 
