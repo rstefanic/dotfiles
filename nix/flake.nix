@@ -19,6 +19,7 @@
           pkgs.ngrok
           pkgs.ripgrep
           pkgs.tmux
+          pkgs.nodejs
         ];
 
       # Necessary for using flakes on this system.
