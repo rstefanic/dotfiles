@@ -17,6 +17,7 @@ return {
             'haskell',
             'javascript',
             'lua',
+            'nix',
             'python',
             'rust',
             'tsx',

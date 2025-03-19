@@ -59,6 +59,7 @@ return {
 
           local servers = {
             clangd = {},
+            nil_ls = {},
           }
 
           mason_lspconfig.setup {
@@ -146,6 +147,8 @@ return {
         },
         capabilities = capabilities,
       })
+
+      require('lspconfig').nil_ls.setup {}
     end
   },
 }
