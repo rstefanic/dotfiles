@@ -7,15 +7,17 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = { self, nix-darwin, nixpkgs }:
   let
     configuration = arch: { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
 
       environment.systemPackages =
-        [ pkgs.docker
+        [ pkgs.cargo
+          pkgs.docker
           pkgs.fzf
           pkgs.neovim
+          pkgs.nil
           pkgs.ngrok
           pkgs.ripgrep
           pkgs.tmux
