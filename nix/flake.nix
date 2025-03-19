@@ -9,7 +9,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
-    configuration = { pkgs, ... }: {
+    configuration = arch: { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
 
       environment.systemPackages =
@@ -33,12 +33,20 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
-      nixpkgs.hostPlatform = "aarch64-darwin";
+      nixpkgs.hostPlatform = arch;
     };
   in
   {
     darwinConfigurations."m3" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [
+        (configuration "aarch64-darwin")
+      ];
+    };
+
+    darwinConfigurations."intel" = nix-darwin.lib.darwinSystem {
+      modules = [
+        (configuration "x86_64-darwin")
+      ];
     };
   };
 }
