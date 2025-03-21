@@ -16,6 +16,7 @@
         [ pkgs.cargo
           pkgs.docker
           pkgs.fzf
+          pkgs.git
           pkgs.neovim
           pkgs.nil
           pkgs.ngrok
