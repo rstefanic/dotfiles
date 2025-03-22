@@ -52,7 +52,7 @@ return {
           require('mason-lspconfig').setup()
 
           -- Setup neovim lua configuration
-          require('neodev').setup()
+          require('lazydev').setup()
 
           -- Ensure the servers above are installed
           local mason_lspconfig = require 'mason-lspconfig'
@@ -79,7 +79,7 @@ return {
         end
       },
       { 'j-hui/fidget.nvim',       opts = {} },
-      'folke/neodev.nvim',
+      'folke/lazydev.nvim',
     },
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
