@@ -14,6 +14,7 @@
 
       environment.systemPackages = with pkgs; [
         cargo
+        direnv
         docker
         fzf
         git
@@ -24,7 +25,6 @@
         ripgrep
         tmux
         nodejs
-        direnv
       ];
 
       # Necessary for using flakes on this system.
