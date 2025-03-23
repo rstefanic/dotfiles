@@ -12,19 +12,20 @@
     configuration = arch: { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
 
-      environment.systemPackages =
-        [ pkgs.cargo
-          pkgs.docker
-          pkgs.fzf
-          pkgs.git
-          pkgs.neovim
-          pkgs.nil
-          pkgs.ngrok
-          pkgs.ripgrep
-          pkgs.tmux
-          pkgs.nodejs
-          pkgs.direnv
-        ];
+      environment.systemPackages = with pkgs; [
+        cargo
+        docker
+        fzf
+        git
+        ollama
+        neovim
+        nil
+        ngrok
+        ripgrep
+        tmux
+        nodejs
+        direnv
+      ];
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
