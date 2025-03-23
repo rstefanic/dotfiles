@@ -30,6 +30,13 @@
         nodejs
       ];
 
+      homebrew = {
+        enable = true;
+        casks = [
+          "stats"
+        ];
+      };
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
