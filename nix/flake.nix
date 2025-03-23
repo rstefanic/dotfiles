@@ -5,10 +5,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = { self, nix-darwin, nixpkgs }:
+  outputs = { self, nix-darwin, nixpkgs, nix-homebrew }:
   let
+    user = "robert";
+
     configuration = arch: { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
 
@@ -44,12 +47,26 @@
     darwinConfigurations."m3" = nix-darwin.lib.darwinSystem {
       modules = [
         (configuration "aarch64-darwin")
+        nix-homebrew.darwinModules.nix-homebrew {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            inherit user;
+            autoMigrate = true;
+          };
+        }
       ];
     };
 
     darwinConfigurations."intel" = nix-darwin.lib.darwinSystem {
       modules = [
         (configuration "x86_64-darwin")
+        nix-homebrew.darwinModules.nix-homebrew {
+          nix-homebrew = {
+            enable = true;
+            inherit user;
+          };
+        }
       ];
     };
   };
