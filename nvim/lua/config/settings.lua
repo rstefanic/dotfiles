@@ -4,6 +4,7 @@ vim.g.maplocalleader = ' '
 
 -- General Config
 vim.opt.number = true
+vim.opt.colorcolumn = '80'
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.hidden = true
@@ -13,9 +14,9 @@ vim.opt.splitbelow = true
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.confirm = true
-vim.opt.updatetime = 250          -- Decrease CursorHold delay
+vim.opt.updatetime = 250   -- Decrease CursorHold delay
 vim.opt.timeoutlen = 300
-vim.opt.redrawtime = 10000        -- Allow more time for loading syntax on large files
+vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.showmode = false
