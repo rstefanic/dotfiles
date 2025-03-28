@@ -8,12 +8,19 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = { self, nix-darwin, nix-homebrew, ... }:
+  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, ... }:
   let user = "robert"; in
   {
     darwinConfigurations."m3" = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
-      specialArgs = { inherit self system; };
+      specialArgs = {
+        inherit self;
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          hostPlatform = system;
+        };
+      };
       modules = [
         ./darwin-packages.nix
 
@@ -30,9 +37,16 @@
 
     darwinConfigurations."intel" = nix-darwin.lib.darwinSystem rec {
       system = "x86_64-darwin";
-      specialArgs = { inherit self system; };
+      specialArgs = {
+        inherit self;
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          hostPlatform = system;
+        };
+      };
       modules = [
-        ./packages.nix
+        ./darwin-packages.nix
 
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {

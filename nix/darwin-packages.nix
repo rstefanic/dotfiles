@@ -1,8 +1,6 @@
-{ self, pkgs, system, ... }:
+{ self, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     _1password-cli
     cargo
@@ -35,6 +33,4 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 5;
-
-  nixpkgs.hostPlatform = system;
 }
