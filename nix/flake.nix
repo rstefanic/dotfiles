@@ -8,71 +8,36 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = { self, nix-darwin, nixpkgs, nix-homebrew }:
-  let
-    user = "robert";
-
-    configuration = arch: { pkgs, ... }: {
-      nixpkgs.config.allowUnfree = true;
-
-      environment.systemPackages = with pkgs; [
-        _1password-cli
-        cargo
-        direnv
-        docker
-        fzf
-        git
-        ollama
-        neovim
-        nil
-        ngrok
-        ripgrep
-        tmux
-        nodejs
-      ];
-
-      homebrew = {
-        enable = true;
-        casks = [
-          "stats"
-        ];
-      };
-
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
-
-      nixpkgs.hostPlatform = arch;
-    };
-  in
+  outputs = { self, nix-darwin, nix-homebrew, ... }:
+  let user = "robert"; in
   {
-    darwinConfigurations."m3" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."m3" = nix-darwin.lib.darwinSystem rec {
+      system = "aarch64-darwin";
+      specialArgs = { inherit self system; };
       modules = [
-        (configuration "aarch64-darwin")
+        ./darwin-packages.nix
+
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
+            inherit user;
             enable = true;
             enableRosetta = true;
-            inherit user;
             autoMigrate = true;
           };
         }
       ];
     };
 
-    darwinConfigurations."intel" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."intel" = nix-darwin.lib.darwinSystem rec {
+      system = "x86_64-darwin";
+      specialArgs = { inherit self system; };
       modules = [
-        (configuration "x86_64-darwin")
+        ./packages.nix
+
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
-            enable = true;
             inherit user;
+            enable = true;
             autoMigrate = true;
           };
         }
