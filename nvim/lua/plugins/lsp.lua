@@ -94,10 +94,6 @@ return {
         }
       }
 
-      require('lspconfig')['hls'].setup {
-        filetypes = { 'haskell', 'lhaskell', 'cabal' }
-      }
-
       require('lspconfig').volar.setup {
         filetypes = { 'vue ' },
         init_options = {
