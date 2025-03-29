@@ -1,12 +1,6 @@
 return {
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  {
-    'rhysd/committia.vim',
-    config = function()
-      vim.g.committia_min_window_width = 80
-    end
-  },
 
   -- Adds git related signs to the gutter, as well as utilities for managing changes
   {
