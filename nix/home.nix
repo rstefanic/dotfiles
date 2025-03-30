@@ -1,13 +1,19 @@
-{ pkgs, ... }:
+{ pkgs,  ... }:
 
 {
+  programs.git = {
+    enable = true;
+    includes = [
+      { contents = import ./gitconfig.nix { lib = pkgs.lib; }; }
+    ];
+  };
+
   home.packages = with pkgs; [
     _1password-cli
     cargo
     docker
     direnv
     fzf
-    git
     ollama
     neovim
     nil
