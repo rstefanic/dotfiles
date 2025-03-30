@@ -6,15 +6,19 @@
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, ... }:
+  outputs = { self, nixpkgs, nix-darwin, home-manager, nix-homebrew, ... }:
   let user = "robert"; in
   {
-    darwinConfigurations."m3" = nix-darwin.lib.darwinSystem rec {
+    darwinConfigurations."Roberts-MacBook-Air" = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
       specialArgs = {
-        inherit self;
+        inherit self user;
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
@@ -22,7 +26,13 @@
         };
       };
       modules = [
-        ./darwin-packages.nix
+        ./darwin.nix
+
+        home-manager.darwinModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.${user} = import ./home.nix;
+        }
 
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
@@ -46,7 +56,7 @@
         };
       };
       modules = [
-        ./darwin-packages.nix
+        ./darwin.nix
 
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {

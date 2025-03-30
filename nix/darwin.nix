@@ -1,21 +1,10 @@
-{ self, pkgs, ... }:
+{ self, user, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    _1password-cli
-    cargo
-    direnv
-    docker
-    fzf
-    git
-    ollama
-    neovim
-    nil
-    ngrok
-    ripgrep
-    tmux
-    nodejs
-  ];
+  users.users.${user} = {
+    home = "/Users/${user}";
+    shell = pkgs.zsh;
+  };
 
   homebrew = {
     enable = true;
