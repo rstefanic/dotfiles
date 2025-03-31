@@ -9,6 +9,9 @@
   homebrew = {
     enable = true;
     casks = [
+      "1password"
+      "firefox"
+      "google-chrome"
       "stats"
     ];
   };
