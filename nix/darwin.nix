@@ -12,6 +12,7 @@
       "1password"
       "firefox"
       "google-chrome"
+      "spotify"
       "stats"
     ];
   };
