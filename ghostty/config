@@ -3,7 +3,7 @@ cursor-style = block
 cursor-style-blink = false
 
 font-family = Inconsolata
-font-size = 16
+font-size = 14
 
 keybind = ctrl+a>r=reload_config
 keybind = ctrl+a>n=new_window
