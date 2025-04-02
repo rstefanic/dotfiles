@@ -13,7 +13,14 @@
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nix-homebrew, ... }:
-  let user = "robert"; in
+  let
+      user = "robert";
+      homeManagerConfig = {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.${user} = import ./home.nix;
+      };
+  in
   {
     darwinConfigurations."Roberts-MacBook-Air" = nix-darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
@@ -27,13 +34,7 @@
       };
       modules = [
         ./darwin.nix
-
-        home-manager.darwinModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${user} = import ./home.nix;
-        }
-
+        home-manager.darwinModules.home-manager homeManagerConfig
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
             inherit user;
@@ -48,7 +49,7 @@
     darwinConfigurations."intel" = nix-darwin.lib.darwinSystem rec {
       system = "x86_64-darwin";
       specialArgs = {
-        inherit self;
+        inherit self user;
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
@@ -57,7 +58,7 @@
       };
       modules = [
         ./darwin.nix
-
+        home-manager.darwinModules.home-manager homeManagerConfig
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
             inherit user;
