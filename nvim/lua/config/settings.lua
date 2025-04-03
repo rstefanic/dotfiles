@@ -23,7 +23,7 @@ vim.opt.showmode = false
 vim.opt.hlsearch = false
 vim.opt.signcolumn = 'yes'
 vim.opt.wildmode = 'longest:full,full'
-vim.opt.guicursor = "i:blinkon1"
+vim.opt.guicursor = "i:blockon1"
 vim.opt.background = "dark"
 
 -- Tabs and what not
