@@ -1,4 +1,4 @@
-{ pkgs,  ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.git = {
@@ -21,6 +21,7 @@
     ripgrep
     tmux
     nodejs
+    inputs.timer.packages.${pkgs.system}.default
   ];
 
   home.stateVersion = "24.11";

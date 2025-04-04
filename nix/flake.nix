@@ -10,12 +10,14 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    timer.url = "github:rstefanic/timer/main";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nix-homebrew, ... }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, nix-homebrew, ... }:
   let
       user = "robert";
       homeManagerConfig = {
+        home-manager.extraSpecialArgs = { inherit inputs; };
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.users.${user} = import ./home.nix;
