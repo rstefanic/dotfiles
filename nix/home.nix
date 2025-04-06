@@ -1,6 +1,7 @@
 { pkgs, inputs, config, ... }:
 let
-  outOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Code/dotfiles/${path}";
+  dotfilesPath = "${config.home.homeDirectory}/Code/dotfiles";
+  outOfStoreSymlinkToDotfiles = path: config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/${path}";
 in
 {
   programs.git = {
@@ -43,11 +44,11 @@ in
     inputs.timer.packages.${pkgs.system}.default
   ];
 
-  home.file.".config/nvim".source = outOfStoreSymlink "nvim";
-  home.file.".config/ghostty/".source = outOfStoreSymlink "ghostty";
-  home.file.".scripts".source = outOfStoreSymlink ".scripts";
-  home.file.".zshrc".source = outOfStoreSymlink ".zshrc";
-  home.file.".tmux.conf".source = outOfStoreSymlink "tmux/.tmux.conf";
+  home.file.".config/nvim".source = outOfStoreSymlinkToDotfiles "nvim";
+  home.file.".config/ghostty/".source = outOfStoreSymlinkToDotfiles "ghostty";
+  home.file.".scripts".source = outOfStoreSymlinkToDotfiles ".scripts";
+  home.file.".zshrc".source = outOfStoreSymlinkToDotfiles ".zshrc";
+  home.file.".tmux.conf".source = outOfStoreSymlinkToDotfiles "tmux/.tmux.conf";
 
   home.stateVersion = "24.11";
 }
