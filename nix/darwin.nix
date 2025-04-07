@@ -16,6 +16,9 @@
       "spotify"
       "stats"
     ];
+    masApps = {
+      "Goodnotes" = 1444383602;
+    };
   };
 
   # Necessary for using flakes on this system.
