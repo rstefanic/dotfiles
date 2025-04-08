@@ -38,6 +38,9 @@ end
 return {
   {
     'neovim/nvim-lspconfig',
+    opts = {
+      inlay_hints = { enabled = false },
+    },
     dependencies = {
       { 'williamboman/mason.nvim', config = true },
       {
@@ -59,7 +62,22 @@ return {
 
           local servers = {
             clangd = {},
-            nil_ls = {},
+            -- Vue 3
+            volar = {},
+            -- TypeScript
+            ts_ls = {
+              filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+              init_options = {
+                plugins = {
+                  {
+                    name = '@vue/typescript-plugin',
+                    location = vim.fn.stdpath 'data' ..
+                        '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+                    languages = { 'vue' },
+                  },
+                },
+              },
+            },
           }
 
           mason_lspconfig.setup {
