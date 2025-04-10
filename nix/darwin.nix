@@ -26,13 +26,18 @@
     NSGlobalDomain.AppleShowAllExtensions = true;
   };
 
-  nix.extraOptions = ''
-    builders-use-substitutes = true
-    extra-trusted-users = ${user}
-  '';
+  nix = {
+    linux-builder.enable = true;
 
-  # Necessary for using flakes on this system.
-  nix.settings.experimental-features = "nix-command flakes";
+    settings = {
+      trusted-users = ["@admin"];
+      experimental-features = "nix-command flakes";
+    };
+
+    extraOptions = ''
+      builders-use-substitutes = true
+    '';
+  };
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = self.rev or self.dirtyRev or null;
