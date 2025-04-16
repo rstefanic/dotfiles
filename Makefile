@@ -1,5 +1,5 @@
-vm:
-	nix run 'nixpkgs#darwin.linux-builder'
+linux-builder-check:
+	launchctl list org.nixos.linux-builder
 
 update:
 	nix flake update --flake ./nix
