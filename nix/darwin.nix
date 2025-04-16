@@ -13,11 +13,13 @@
       "firefox"
       "google-chrome"
       "rectangle"
+      "slack"
       "spotify"
       "stats"
     ];
     masApps = {
       "Goodnotes" = 1444383602;
+      "UTM" = 1538878817;
     };
   };
 
