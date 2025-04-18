@@ -1,4 +1,5 @@
 EDITOR="nvim"
+setopt AUTO_CD
 
 # History file
 export HISTFILE=$HOME/.zsh/.zsh_history
