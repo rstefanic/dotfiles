@@ -39,7 +39,6 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.cmp',
   require 'plugins.lsp',
-  require 'plugins.autoformat',
   require 'plugins.git',
   require 'plugins.colorscheme',
   require 'plugins.mini',
