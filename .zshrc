@@ -29,6 +29,8 @@ zle -N down-line-or-beginning-search
 bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
 bindkey "$terminfo[kcud1]" down-line-or-beginning-search
 
+bindkey '^[[3~' delete-char
+
 alias sa="source ~/.zshrc; echo 'ZSH sourced.'"
 alias pu="clear && ./vendor/bin/phpunit"
 alias pf="clear && ./vendor/bin/phpunit --filter"
