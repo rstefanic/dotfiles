@@ -19,8 +19,15 @@ PROMPT='%B%F{yellow}%m%f %B%F{blue}%~%f ${vcs_info_msg_0_} %(?.%F{green}●%f.%F
 RPROMPT='%F{245}%*%f'
 
 autoload -Uz edit-command-line
-zle -N edit-command-line{,}
+zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
+bindkey "$terminfo[kcud1]" down-line-or-beginning-search
 
 alias sa="source ~/.zshrc; echo 'ZSH sourced.'"
 alias pu="clear && ./vendor/bin/phpunit"
