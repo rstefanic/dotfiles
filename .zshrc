@@ -1,3 +1,5 @@
+EDITOR="nvim"
+
 # History file
 export HISTFILE=$HOME/.zsh/.zsh_history
 export HISTSIZE=10000
@@ -14,6 +16,10 @@ precmd() { vcs_info } # get VCS info before each cmd is ran
 setopt PROMPT_SUBST # subject the prompt strings to parameter expansion
 PROMPT='%B%F{yellow}%m%f %B%F{blue}%~%f ${vcs_info_msg_0_} %(?.%F{green}●%f.%F{red}●%f)%b '
 RPROMPT='%F{245}%*%f'
+
+autoload -Uz edit-command-line
+zle -N edit-command-line{,}
+bindkey '^e' edit-command-line
 
 alias sa="source ~/.zshrc; echo 'ZSH sourced.'"
 alias pu="clear && ./vendor/bin/phpunit"
