@@ -1,15 +1,21 @@
-export ZSH="$HOME/.oh-my-zsh"
+# History file
+export HISTFILE=$HOME/.zsh/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
 
-ZSH_THEME="agnoster"
-ZSH_DISABLE_COMPFIX="true"
+# Load plugins
+autoload -Uz compinit && compinit
+autoload -Uz vcs_info
 
-plugins=(
-    git
-    direnv
-)
+# Set zstyle for VCS expansion
+zstyle ':vcs_info:git:*' formats '%F{red}%b%f'
 
-source $ZSH/oh-my-zsh.sh
+precmd() { vcs_info } # get VCS info before each cmd is ran
+setopt PROMPT_SUBST # subject the prompt strings to parameter expansion
+PROMPT='%B%F{yellow}%m%f %B%F{blue}%~%f ${vcs_info_msg_0_} %(?.%F{green}●%f.%F{red}●%f)%b '
+RPROMPT='%F{245}%*%f'
 
+alias sa="source ~/.zshrc; echo 'ZSH sourced.'"
 alias pu="clear && ./vendor/bin/phpunit"
 alias pf="clear && ./vendor/bin/phpunit --filter"
 alias pd="clear && ./vendor/bin/phpunit --testdox"
@@ -25,3 +31,5 @@ alias glr="git lr"
 alias glra="git lra"
 alias glg="git lg"
 alias nah="git restore -- ."
+
+eval "$(direnv hook zsh)"
