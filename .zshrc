@@ -11,7 +11,7 @@ autoload -Uz compinit && compinit
 autoload -Uz vcs_info
 
 # Set zstyle for VCS expansion
-zstyle ':vcs_info:git:*' formats '%F{red}%b%f'
+zstyle ':vcs_info:git:*' formats '%F{red}(%b)%f'
 
 precmd() { vcs_info } # get VCS info before each cmd is ran
 setopt PROMPT_SUBST # subject the prompt strings to parameter expansion
