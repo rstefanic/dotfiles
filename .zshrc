@@ -10,22 +10,24 @@ export SAVEHIST=10000
 autoload -Uz compinit && compinit
 autoload -Uz vcs_info
 
-vcs_status_arrow=""
+# Set zstyle for VCS expansion
+zstyle ':vcs_info:git:*' formats '(%b)'
+vcs_branch=""
 precmd() {
     vcs_info
     if [[ -z "${vcs_info_msg_0_}" ]] {
-        vcs_status_arrow="%F{default}▶%f"
+        vcs_branch=""
     } elif [[ -n "$(git diff --cached --name-status 2>/dev/null)" ]] {
-        vcs_status_arrow="%F{yellow}▶%f"
+        vcs_branch="%F{yellow}${vcs_info_msg_0_}%f"
     } elif [[ -n "$(git diff --name-status 2>/dev/null)" ]] {
-        vcs_status_arrow="%F{red}▶%f"
+        vcs_branch="%F{red}${vcs_info_msg_0_}%f"
     } else {
-        vcs_status_arrow="%F{green}▶%f"
+        vcs_branch="%F{green}${vcs_info_msg_0_}%f"
     }
 }
 
 setopt PROMPT_SUBST # subject the prompt strings to parameter expansion
-PROMPT='%B%F{yellow}%m%f %B%F{blue}%~%f %(?.%F{green}●%f.%F{red}●%f)%b ${vcs_status_arrow} '
+PROMPT='%B%F{yellow}%m%f %B%F{blue}%~%f ${vcs_branch} %(?.%F{green}●%f.%F{red}●%f)%b '
 RPROMPT='%F{245}%*%f'
 
 autoload -Uz edit-command-line
