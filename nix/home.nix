@@ -34,6 +34,7 @@ in
     docker
     direnv
     fzf
+    lima
     ollama
     neovim
     nil
