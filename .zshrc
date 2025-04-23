@@ -18,9 +18,9 @@ precmd() {
     if [[ -z "${vcs_info_msg_0_}" ]] {
         vcs_branch=""
     } elif [[ -n "$(git diff --cached --name-status 2>/dev/null)" ]] {
-        vcs_branch="%F{yellow}${vcs_info_msg_0_}%f"
-    } elif [[ -n "$(git diff --name-status 2>/dev/null)" ]] {
         vcs_branch="%F{red}${vcs_info_msg_0_}%f"
+    } elif [[ -n "$(git diff --name-status 2>/dev/null)" ]] {
+        vcs_branch="%F{yellow}${vcs_info_msg_0_}%f"
     } else {
         vcs_branch="%F{green}${vcs_info_msg_0_}%f"
     }
