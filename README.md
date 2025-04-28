@@ -5,4 +5,3 @@
 - git
 - ghostty
 - zsh
-- packages

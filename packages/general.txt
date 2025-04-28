@@ -1,7 +1,0 @@
-cmake
-curl
-gettext
-git
-tmux
-unzip
-zsh
