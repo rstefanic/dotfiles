@@ -43,6 +43,7 @@ in
     tmux
     nodejs
     inputs.timer.packages.${pkgs.system}.default
+    (pkgs.callPackage ./tableplus.nix {})
   ];
 
   home.file.".config/nvim".source = outOfStoreSymlinkToDotfiles "nvim";
