@@ -4,7 +4,20 @@ let
   outOfStoreSymlinkToDotfiles = path: config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/${path}";
 in
 {
-  programs.jujutsu.enable = true;
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        email = "rstefanic72@gmail.com";
+        name = "Robert Stefanic";
+      };
+      signing = {
+        behavior = "own";
+        backend = "ssh";
+        key = "~/.ssh/id_ed25519.pub";
+      };
+    };
+  };
 
   programs.git = {
     enable = true;
