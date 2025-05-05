@@ -32,6 +32,9 @@
           inherit system;
           config.allowUnfree = true;
           hostPlatform = system;
+          config.permittedInsecurePackages = [
+            "jujutsu-0.23.0"
+          ];
         };
       };
       modules = [
@@ -56,6 +59,9 @@
           inherit system;
           config.allowUnfree = true;
           hostPlatform = system;
+          config.permittedInsecurePackages = [
+            "jujutsu-0.23.0"
+          ];
         };
       };
       modules = [

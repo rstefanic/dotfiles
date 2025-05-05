@@ -4,6 +4,8 @@ let
   outOfStoreSymlinkToDotfiles = path: config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/${path}";
 in
 {
+  programs.jujutsu.enable = true;
+
   programs.git = {
     enable = true;
     includes = [
