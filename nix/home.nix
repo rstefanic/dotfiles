@@ -4,20 +4,7 @@ let
   outOfStoreSymlinkToDotfiles = path: config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/${path}";
 in
 {
-  programs.jujutsu = {
-    enable = true;
-    settings = {
-      user = {
-        email = "rstefanic72@gmail.com";
-        name = "Robert Stefanic";
-      };
-      signing = {
-        behavior = "own";
-        backend = "ssh";
-        key = "~/.ssh/id_ed25519.pub";
-      };
-    };
-  };
+  programs.jujutsu.enable = true;
 
   programs.git = {
     enable = true;
@@ -66,6 +53,7 @@ in
   home.file.".scripts".source = outOfStoreSymlinkToDotfiles ".scripts";
   home.file.".zshrc".source = outOfStoreSymlinkToDotfiles ".zshrc";
   home.file.".tmux.conf".source = outOfStoreSymlinkToDotfiles "tmux/.tmux.conf";
+  home.file.".config/jj/config.toml".source = outOfStoreSymlinkToDotfiles "jujutsu.toml";
 
   home.stateVersion = "24.11";
 }

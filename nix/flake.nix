@@ -11,6 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     timer.url = "github:rstefanic/timer/main";
+    jujutsu.url = "github:martinvonz/jj";
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, nix-homebrew, ... }:
@@ -22,6 +23,9 @@
         home-manager.useUserPackages = true;
         home-manager.users.${user} = import ./home.nix;
       };
+      overlays = [
+        inputs.jujutsu.overlays.default
+      ];
   in
   {
     darwinConfigurations."Roberts-MacBook-Air" = nix-darwin.lib.darwinSystem rec {
@@ -29,12 +33,9 @@
       specialArgs = {
         inherit self user;
         pkgs = import nixpkgs {
-          inherit system;
+          inherit system overlays;
           config.allowUnfree = true;
           hostPlatform = system;
-          config.permittedInsecurePackages = [
-            "jujutsu-0.23.0"
-          ];
         };
       };
       modules = [
@@ -56,12 +57,9 @@
       specialArgs = {
         inherit self user;
         pkgs = import nixpkgs {
-          inherit system;
+          inherit system overlays;
           config.allowUnfree = true;
           hostPlatform = system;
-          config.permittedInsecurePackages = [
-            "jujutsu-0.23.0"
-          ];
         };
       };
       modules = [
