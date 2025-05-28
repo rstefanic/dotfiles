@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
   src = fetchurl {
     name = "TablePlus.dmg";
     url = "https://tableplus.com/release/osx/tableplus_latest";
-    sha256 = "cf37640e35862a6736fe8d4408fdbe5f701d93813e0cc426baf43e44eec2ab20";
+    hash = "sha256-wb5ac82u+DJ7hJ+htnW6aipYjzfjW70lISFZtOOxsy0=";
   };
 
   nativeBuildInputs = with pkgs; [ makeWrapper _7zz ];
