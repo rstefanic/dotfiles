@@ -4,6 +4,7 @@ email = "rstefanic72@gmail.com"
 
 [ui]
 editor = "nvim"
+default-command = "log"
 
 [signing]
 behavior = "own"
