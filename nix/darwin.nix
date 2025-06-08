@@ -24,11 +24,6 @@
     };
   };
 
-  system.defaults = {
-    dock.autohide = true;
-    NSGlobalDomain.AppleShowAllExtensions = true;
-  };
-
   nix = {
     linux-builder = {
       enable = true;
@@ -55,10 +50,20 @@
     '';
   };
 
-  # Set Git commit hash for darwin-version.
-  system.configurationRevision = self.rev or self.dirtyRev or null;
+  system = {
+    primaryUser = "robert";
 
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-  system.stateVersion = 5;
+    defaults = {
+      dock.autohide = true;
+      NSGlobalDomain.AppleShowAllExtensions = true;
+    };
+
+    # Set Git commit hash for darwin-version.
+    configurationRevision = self.rev or self.dirtyRev or null;
+
+    # Used for backwards compatibility, please read the changelog before changing.
+    # $ darwin-rebuild changelog
+    stateVersion = 5;
+  };
+
 }
