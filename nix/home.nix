@@ -33,6 +33,7 @@ in
   home.packages = with pkgs; [
     _1password-cli
     cargo
+    claude-code
     docker
     direnv
     fzf
