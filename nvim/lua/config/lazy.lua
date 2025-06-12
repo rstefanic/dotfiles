@@ -41,6 +41,7 @@ require('lazy').setup({
   require 'plugins.lsp',
   require 'plugins.git',
   require 'plugins.colorscheme',
+  require 'plugins.avante',
   require 'plugins.mini',
   require 'plugins.which-key',
   require 'plugins.oil',
