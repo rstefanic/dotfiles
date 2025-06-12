@@ -122,13 +122,12 @@ return {
           -- mason-lspconfig requires that these setup functions are called in this order
           -- before setting up the servers.
           require('mason').setup()
-          require('mason-lspconfig').setup()
 
           -- Setup neovim lua configuration
           require('lazydev').setup()
 
           -- Ensure the servers above are installed
-          local mason_lspconfig = require 'mason-lspconfig'
+          local mason_lspconfig = require('mason-lspconfig')
 
           local servers = {
             clangd = {},
@@ -150,21 +149,19 @@ return {
             },
           }
 
-          mason_lspconfig.setup {
-            automatic_installation = true,
+          mason_lspconfig.setup({
+            automatic_installation = false,
             ensure_installed = vim.tbl_keys(servers),
-          }
+          })
 
-          mason_lspconfig.setup_handlers {
-            function(server_name)
-              require('lspconfig')[server_name].setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-                settings = servers[server_name],
-                filetypes = (servers[server_name] or {}).filetypes,
-              }
-            end,
-          }
+          for server_name, _ in pairs(servers) do
+            require('lspconfig')[server_name].setup {
+              capabilities = capabilities,
+              on_attach = on_attach,
+              settings = servers[server_name],
+              filetypes = (servers[server_name] or {}).filetypes,
+            }
+          end
         end
       },
       { 'j-hui/fidget.nvim',       opts = {} },
