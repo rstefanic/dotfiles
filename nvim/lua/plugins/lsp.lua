@@ -126,9 +126,6 @@ return {
           -- Setup neovim lua configuration
           require('lazydev').setup()
 
-          -- Ensure the servers above are installed
-          local mason_lspconfig = require('mason-lspconfig')
-
           local servers = {
             clangd = {},
             -- Vue 3
@@ -149,9 +146,12 @@ return {
             },
           }
 
+          local mason_lspconfig = require('mason-lspconfig')
+          -- Call setup but don't install/enable anything; we'll manually register the servers
           mason_lspconfig.setup({
+            automatic_enable = false,
             automatic_installation = false,
-            ensure_installed = vim.tbl_keys(servers),
+            ensure_installed = {},
           })
 
           for server_name, _ in pairs(servers) do
