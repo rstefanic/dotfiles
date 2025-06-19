@@ -2,13 +2,7 @@ return {
   {
     "supermaven-inc/supermaven-nvim",
     config = function()
-      require("supermaven-nvim").setup({
-        keymaps = {
-          accept_suggestion = "<C-j>",
-          accept_word = "<C-k>",
-          clear_suggestion = "<C-]>",
-        },
-      })
+      require("supermaven-nvim").setup({})
     end,
   },
 }
