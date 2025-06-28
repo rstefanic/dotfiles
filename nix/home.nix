@@ -38,6 +38,7 @@ in
     direnv
     fzf
     lima
+    lua
     ollama
     neovim
     nil
