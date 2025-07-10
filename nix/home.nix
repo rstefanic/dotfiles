@@ -49,6 +49,7 @@ in
     inputs.timer.packages.${pkgs.system}.default
     (pkgs.callPackage ./tableplus.nix {})
     (pkgs.callPackage ./love.nix {})
+    (pkgs.callPackage ./aseprite.nix {})
   ];
 
   home.file.".config/nvim".source = outOfStoreSymlinkToDotfiles "nvim";
