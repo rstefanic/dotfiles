@@ -3,6 +3,7 @@ cursor-style = block
 cursor-style-blink = false
 
 font-family = Inconsolata
+theme = onehalfdark
 font-size = 14
 
 keybind = ctrl+a>r=reload_config
