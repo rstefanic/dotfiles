@@ -44,3 +44,5 @@ keymap('n', 'so', '<C-w>o')
 
 -- Explorer
 keymap('n', '<leader>pf', ':Ex<CR>');
+
+keymap('n', '<leader>as', ':SupermavenToggle<CR>')
