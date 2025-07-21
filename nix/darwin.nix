@@ -10,6 +10,7 @@
     enable = true;
     casks = [
       "1password"
+      "discord"
       "firefox"
       "google-chrome"
       "rectangle"
