@@ -39,6 +39,7 @@ in
     fzf
     lima
     lua
+    odin
     ollama
     neovim
     nil
