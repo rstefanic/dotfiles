@@ -53,7 +53,7 @@ in
   ];
 
   home.file.".config/nvim".source = outOfStoreSymlinkToDotfiles "nvim";
-  home.file.".config/ghostty/".source = outOfStoreSymlinkToDotfiles "ghostty";
+  home.file.".config/ghostty/config".source = outOfStoreSymlinkToDotfiles "ghostty.config";
   home.file.".scripts".source = outOfStoreSymlinkToDotfiles ".scripts";
   home.file.".zshrc".source = outOfStoreSymlinkToDotfiles ".zshrc";
   home.file.".tmux.conf".source = outOfStoreSymlinkToDotfiles ".tmux.conf";
