@@ -46,3 +46,6 @@ keymap('n', 'so', '<C-w>o')
 keymap('n', '<leader>pf', ':Ex<CR>');
 
 keymap('n', '<leader>as', ':SupermavenToggle<CR>')
+
+-- JQ format JSON
+keymap('n', '<leader>jf', ":%!jq '.'<CR>")
