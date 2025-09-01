@@ -25,6 +25,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.wildmode = 'longest:full,full'
 vim.opt.guicursor = "i:blockon1"
 vim.opt.background = "dark"
+vim.opt.spell = true
 
 -- Tabs and what not
 vim.opt.tabstop = 4
