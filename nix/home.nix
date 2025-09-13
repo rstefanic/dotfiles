@@ -34,8 +34,9 @@ in
     _1password-cli
     cargo
     claude-code
-    docker
     direnv
+    docker
+    duckdb
     fzf
     lima
     lua
