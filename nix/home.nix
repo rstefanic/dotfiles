@@ -47,6 +47,7 @@ in
     ripgrep
     tmux
     nodejs
+    pnpm
     inputs.timer.packages.${pkgs.system}.default
     (pkgs.callPackage ./tableplus.nix {})
     (pkgs.callPackage ./love.nix {})
