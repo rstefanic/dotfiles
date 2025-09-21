@@ -40,7 +40,6 @@ require('lazy').setup({
   require 'plugins.cmp',
   require 'plugins.lsp',
   require 'plugins.git',
-  require 'plugins.supermaven',
   require 'plugins.mini',
   require 'plugins.oil',
   require 'plugins.neoformat',
