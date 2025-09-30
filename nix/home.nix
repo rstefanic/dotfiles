@@ -38,6 +38,7 @@ in
     docker
     duckdb
     fzf
+    gh
     lima
     lua
     ollama
