@@ -32,6 +32,7 @@ in
 
   home.packages = with pkgs; [
     _1password-cli
+    amp-cli
     cargo
     claude-code
     direnv
