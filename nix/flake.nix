@@ -25,6 +25,17 @@
       };
       overlays = [
         inputs.jujutsu.overlays.default
+        (final: prev: {
+          duckdb = prev.duckdb.overrideAttrs (previousAttrs: rec {
+            version = "1.4.1";
+            src = prev.fetchFromGitHub {
+              owner = "duckdb";
+              repo = "duckdb";
+              rev = "${version}";
+              sha256 = "sha256-w/mELyRs4B9hJngi1MLed0fHRq/ldkkFV+SDkSxs3O8=";
+            };
+          });
+        })
       ];
   in
   {
