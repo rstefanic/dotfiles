@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -35,6 +36,12 @@
               sha256 = "sha256-w/mELyRs4B9hJngi1MLed0fHRq/ldkkFV+SDkSxs3O8=";
             };
           });
+        })
+        (final: prev: {
+          lima = (import inputs.nixpkgs-unstable {
+            system = prev.system;
+            config = prev.config;
+          }).lima;
         })
       ];
   in
