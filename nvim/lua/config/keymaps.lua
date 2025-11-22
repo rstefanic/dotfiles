@@ -21,6 +21,7 @@ end
 
 -- Fugitive
 keymap('n', '<leader>gs', '<cmd>Git<CR>');
+keymap('n', '<leader>gh', '<cmd>0Gclog<CR>');
 
 -- Init edit and sourcing
 keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
