@@ -144,6 +144,15 @@ return {
                 },
               },
             },
+            sourcekit = {
+              capabilities = {
+                workspace = {
+                  didChangeWatchedFiles = {
+                    dynamicRegistration = true,
+                  },
+                },
+              },
+            }
           }
 
           local mason_lspconfig = require('mason-lspconfig')
