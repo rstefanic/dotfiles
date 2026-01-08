@@ -43,6 +43,7 @@ in
     lima
     lua
     ollama
+    opencode
     neovim
     nil
     ngrok
