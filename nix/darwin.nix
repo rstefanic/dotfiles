@@ -1,4 +1,4 @@
-{ self, user, pkgs, ... }:
+{ self, user, pkgs, config, ... }:
 
 {
   users.users.${user} = {
@@ -50,6 +50,12 @@
       builders-use-substitutes = true
     '';
   };
+
+  environment.systemPackages = [
+    (pkgs.callPackage ./custom-darwin/tableplus.nix {})
+    (pkgs.callPackage ./custom-darwin/love.nix {})
+    (pkgs.callPackage ./custom-darwin/aseprite.nix {})
+  ];
 
   system = {
     primaryUser = "robert";

@@ -30,36 +30,28 @@ in
     ];
   };
 
-  home.packages = with pkgs; lib.mkMerge [
-    [
-      _1password-cli
-      amp-cli
-      cargo
-      claude-code
-      direnv
-      docker
-      duckdb
-      fzf
-      gh
-      lima
-      lua
-      neovim
-      ngrok
-      nil
-      nodejs
-      ollama
-      opencode
-      pnpm
-      ripgrep
-      tmux
-      inputs.timer.packages.${pkgs.system}.default
-    ]
-
-    (lib.mkIf (stdenv.hostPlatform.system == "aarch64-darwin") [
-      (pkgs.callPackage ./custom-darwin/tableplus.nix {})
-      (pkgs.callPackage ./custom-darwin/love.nix {})
-      (pkgs.callPackage ./custom-darwin/aseprite.nix {})
-    ])
+  home.packages = with pkgs; [
+    _1password-cli
+    amp-cli
+    cargo
+    claude-code
+    direnv
+    docker
+    duckdb
+    fzf
+    gh
+    lima
+    lua
+    neovim
+    ngrok
+    nil
+    nodejs
+    ollama
+    opencode
+    pnpm
+    ripgrep
+    tmux
+    inputs.timer.packages.${pkgs.system}.default
   ];
 
   home.file.".config/nvim".source = outOfStoreSymlinkToDotfiles "nvim";

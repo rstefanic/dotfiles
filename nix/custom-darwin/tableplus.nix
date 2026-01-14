@@ -21,9 +21,9 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     runHook preInstall
-    mkdir -p $out/{Applications/Nix\ Apps/TablePlus.app,bin}
-    cp -R . $out/Applications/Nix\ Apps/TablePlus.app
-    makeWrapper $out/Applications/Nix\ Apps/TablePlus.app/Contents/MacOS/TablePlus $out/bin/${pname}
+    mkdir -p $out/{Applications/TablePlus.app,bin}
+    cp -R . $out/Applications/TablePlus.app
+    makeWrapper $out/Applications//TablePlus.app/Contents/MacOS/TablePlus $out/bin/${pname}
     runHook postInstall
   '';
 
