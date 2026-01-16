@@ -11,6 +11,7 @@
     casks = [
       "1password"
       "discord"
+      "easy-move-plus-resize"
       "firefox"
       "google-chrome"
       "rectangle"
