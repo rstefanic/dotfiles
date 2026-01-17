@@ -3,16 +3,12 @@ require 'config.lazy'
 require 'config.keymaps'
 require 'config.autocmds'
 
-vim.g.everforest_background = 'hard'
-vim.cmd [[colorscheme everforest]]
+vim.cmd [[colorscheme distilled]]
 
--- Overwrite Everforest spelling highlights to be less noisy
+-- Overwrite spelling highlights to be less noisy without underlines
 vim.cmd([[
-    let s:configuration = everforest#get_configuration()
-    let s:palette = everforest#get_palette(s:configuration.background, s:configuration.colors_override)
-
-    call everforest#highlight('SpellBad', s:palette.red, s:palette.none)
-    call everforest#highlight('SpellCap', s:palette.blue, s:palette.none)
-    call everforest#highlight('SpellLocal', s:palette.aqua, s:palette.none)
-    call everforest#highlight('SpellRare', s:palette.purple, s:palette.none)
+    hi SpellBad         ctermbg=NONE ctermfg=1    cterm=NONE      guibg=NONE     guifg=#e76d6d  gui=NONE
+    hi SpellCap         ctermbg=NONE ctermfg=1    cterm=NONE      guibg=NONE     guifg=#e76d6d  gui=NONE
+    hi SpellLocal       ctermbg=NONE ctermfg=9    cterm=NONE      guibg=NONE     guifg=#edbabf  gui=NONE
+    hi SpellRare        ctermbg=NONE ctermfg=9    cterm=NONE      guibg=NONE     guifg=#edbabf  gui=NONE
 ]])
