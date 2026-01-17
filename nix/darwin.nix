@@ -73,6 +73,9 @@
         pathsToLink = [ "/Applications" "/Applications/Nix\ Apps/" ];
       };
     in pkgs.lib.mkForce ''
+      # Allow Ctrl + Cmd + Click to drag window.
+      defaults write -g NSWindowShouldDragOnGesture -bool true
+
       echo "configuring spotlight for custom Darwin installations..."
       find ${env}/Applications/ -maxdepth 1 -type l -exec sh -c '
         src="$(/usr/bin/stat -f%Y "$1")"
