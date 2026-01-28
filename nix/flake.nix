@@ -42,6 +42,14 @@
             system = prev.system;
             config = prev.config;
           }).lima;
+          claude = (import inputs.nixpkgs-unstable {
+            system = prev.system;
+            config = prev.config;
+          }).claude;
+          bun = (import inputs.nixpkgs-unstable {
+            system = prev.system;
+            config = prev.config;
+          }).bun;
         })
       ];
   in
