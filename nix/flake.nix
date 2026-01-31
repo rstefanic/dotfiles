@@ -50,6 +50,10 @@
             system = prev.system;
             config = prev.config;
           }).bun;
+          opencode = (import inputs.nixpkgs-unstable {
+            system = prev.system;
+            config = prev.config;
+          }).opencode;
         })
       ];
   in
