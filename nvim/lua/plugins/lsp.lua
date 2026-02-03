@@ -154,13 +154,13 @@ return {
             ensure_installed = {},
           })
 
-          for server_name, _ in pairs(servers) do
-            require('lspconfig')[server_name].setup {
+          for server_name, server_config in pairs(servers) do
+            vim.lsp.config(server_name, {
               capabilities = capabilities,
-              on_attach = on_attach,
-              settings = servers[server_name],
-              filetypes = (servers[server_name] or {}).filetypes,
-            }
+              settings = server_config,
+              filetypes = server_config.filetypes,
+            })
+            vim.lsp.enable(server_name)
           end
         end
       },
@@ -171,36 +171,36 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-      require('lspconfig').lua_ls.setup {
+      vim.lsp.config('lua_ls', {
         settings = {
           Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
           },
         }
-      }
+      })
+      vim.lsp.enable('lua_ls')
 
-      require('lspconfig').volar.setup {
-        filetypes = { 'vue ' },
+      vim.lsp.config('volar', {
+        filetypes = { 'vue' },
         init_options = {
           vue = {
             hybridMode = true,
           },
           typescript = {
-            -- TODO: Add real path
-            -- tsdk = '/path/to/node_modules/typescript/lib'
+            -- tsdk will be set by on_init based on project root
           }
         },
-        -- Use a local server and fall back to a global TypeScript Server installation
-        on_new_config = function(new_config, new_root_dir)
-          local lib_path = vim.fs.find('node_modules/typescript/lib', { path = new_root_dir, upward = true })[1]
+        on_init = function(client)
+          local lib_path = vim.fs.find('node_modules/typescript/lib', { path = client.root_dir, upward = true })[1]
           if lib_path then
-            new_config.init_options.typescript.tsdk = lib_path
+            client.config.init_options.typescript.tsdk = lib_path
           end
         end,
-      }
+      })
+      vim.lsp.enable('volar')
 
-      require('lspconfig').ts_ls.setup {
+      vim.lsp.config('ts_ls', {
         init_options = {
           plugins = {
             {
@@ -215,10 +215,11 @@ return {
           "typescript",
           "vue",
         },
-      }
+      })
+      vim.lsp.enable('ts_ls')
 
       -- Intelephense LSP configuration
-      require('lspconfig').intelephense.setup({
+      vim.lsp.config('intelephense', {
         on_attach = function(client, bufnr)
           on_attach(client, bufnr)
           client.server_capabilities.documentFormattingProvider = false
@@ -229,8 +230,9 @@ return {
         },
         capabilities = capabilities,
       })
+      vim.lsp.enable('intelephense')
 
-      require('lspconfig').nil_ls.setup {}
+      vim.lsp.enable('nil_ls')
 
       setup_autoformatting()
     end
