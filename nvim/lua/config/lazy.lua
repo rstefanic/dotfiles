@@ -18,11 +18,6 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  -- Super important plugins
-  'tjdevries/sPoNGe-BoB.NvIm',
-
-  -- Tmux navigation
-  'christoomey/vim-tmux-navigator',
   { "blazkowolf/gruber-darker.nvim" },
 
   {
@@ -35,7 +30,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',        opts = {} },
 
   require 'plugins.treesitter',
   require 'plugins.cmp',
