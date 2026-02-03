@@ -23,6 +23,7 @@ require('lazy').setup({
 
   -- Tmux navigation
   'christoomey/vim-tmux-navigator',
+  { "blazkowolf/gruber-darker.nvim" },
 
   {
     -- Add indentation guides even on blank lines
