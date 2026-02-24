@@ -38,7 +38,6 @@ require('lazy').setup({
   require 'plugins.git',
   require 'plugins.mini',
   require 'plugins.oil',
-  require 'plugins.neoformat',
   require 'plugins.telescope',
   require 'plugins.smart-splits',
 
