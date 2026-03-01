@@ -27,6 +27,9 @@ keymap('n', '<leader>gh', '<cmd>0Gclog<CR>');
 keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
 keymap('n', '<leader>vs', ':source ~/.config/nvim/init.lua<CR>')
 
+-- Document read mode
+keymap('n', '<leader>dr', ':set wrap linebreak nolist textwidth=0<CR>')
+
 -- Remove highlighting
 keymap('n', '<leader>h', ':noh<CR>')
 
