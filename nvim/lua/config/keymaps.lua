@@ -53,3 +53,6 @@ keymap('n', '<leader>as', ':SupermavenToggle<CR>')
 
 -- JQ format JSON
 keymap('n', '<leader>jf', ":%!jq '.'<CR>")
+
+-- Disable LSP autoformatting. `FormatToggle` is a custom command defined in lsp.lua.
+keymap('n', '<leader>tf', '<cmd>FormatToggle<CR>', { desc = '[T]oggle [F]ormat on save' })
