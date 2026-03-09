@@ -27,7 +27,7 @@ precmd() {
 }
 
 setopt PROMPT_SUBST # subject the prompt strings to parameter expansion
-PROMPT='%B%F{yellow}%m%f %B%F{blue}%~%f ${vcs_branch} %(?.%F{green}●%f.%F{red}●%f)%b '
+PROMPT='%B%F{blue}%~%f ${vcs_branch} %(?.%F{green}●%f.%F{red}●%f)%b '
 RPROMPT='%F{245}%*%f'
 
 autoload -Uz edit-command-line
