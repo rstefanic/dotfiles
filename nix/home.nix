@@ -41,6 +41,7 @@ in
     duckdb
     fzf
     gh
+    go
     lima
     lua
     neovim
