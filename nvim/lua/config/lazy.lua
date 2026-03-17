@@ -18,7 +18,7 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  { "blazkowolf/gruber-darker.nvim" },
+  { "nikolvs/vim-sunbather" },
 
   {
     -- Add indentation guides even on blank lines

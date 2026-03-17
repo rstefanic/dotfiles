@@ -3,7 +3,7 @@ require 'config.lazy'
 require 'config.keymaps'
 require 'config.autocmds'
 
-vim.cmd [[colorscheme gruber-darker]]
+vim.cmd [[colorscheme sunbather]]
 
 -- Overwrite spelling highlights to be less noisy without underlines
 vim.cmd([[
