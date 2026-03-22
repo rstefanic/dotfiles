@@ -171,6 +171,8 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+      vim.lsp.enable('hls')
+
       vim.lsp.config('lua_ls', {
         settings = {
           Lua = {
