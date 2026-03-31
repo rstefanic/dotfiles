@@ -3,8 +3,6 @@ require 'config.lazy'
 require 'config.keymaps'
 require 'config.autocmds'
 
-vim.cmd [[colorscheme vim]]
-
 -- Overwrite spelling highlights to be less noisy without underlines
 vim.cmd([[
     hi SpellBad         ctermbg=NONE ctermfg=1    cterm=NONE      guibg=NONE     guifg=#e76d6d  gui=NONE
