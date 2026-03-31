@@ -4,9 +4,9 @@ vim.g.maplocalleader = ' '
 
 -- General Config
 vim.opt.number = true
-vim.opt.colorcolumn = '80'
 vim.opt.relativenumber = true
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
+vim.opt.background = "light"
 vim.opt.hidden = true
 vim.opt.title = true
 vim.opt.splitright = true
@@ -24,7 +24,6 @@ vim.opt.hlsearch = false
 vim.opt.signcolumn = 'yes'
 vim.opt.wildmode = 'longest:full,full'
 vim.opt.guicursor = "i:blockon1"
-vim.opt.background = "dark"
 vim.opt.spell = true
 
 -- Tabs and what not

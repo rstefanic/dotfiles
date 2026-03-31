@@ -72,6 +72,8 @@ local function setup_autoformatting()
         return
       end
 
+      client.server_capabilities.semanticTokensProvider = nil
+
       -- Only attach to clients that support document formatting
       if not client.server_capabilities.documentFormattingProvider then
         return

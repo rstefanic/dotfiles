@@ -27,7 +27,7 @@ return {
             'vue'
           },
           auto_install = false,
-          highlight = { enable = true },
+          highlight = { enable = false },
           indent = { enable = true },
           incremental_selection = {
             enable = true,
