@@ -53,6 +53,7 @@ in
     pnpm
     ripgrep
     tmux
+    inputs.sheets.packages.${pkgs.system}.default
     inputs.timer.packages.${pkgs.system}.default
   ];
 

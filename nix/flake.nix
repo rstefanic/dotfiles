@@ -11,6 +11,7 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sheets.url = "github:maaslalani/sheets/main";
     timer.url = "github:rstefanic/timer/main";
     jujutsu.url = "github:martinvonz/jj";
   };
