@@ -45,11 +45,12 @@
               config = prev.config;
             });
           in {
-            lima = unstable.lima;
-            claude = unstable.claude;
             bun = unstable.bun;
+            claude = unstable.claude;
+            lima = unstable.lima;
+            nodejs = unstable.nodejs;
+            neovim = unstable.neovim;
             opencode = unstable.opencode;
-            nodejs= unstable.nodejs;
             ruby_4_0 = unstable.ruby_4_0;
           }
         )
