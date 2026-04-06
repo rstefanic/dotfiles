@@ -23,18 +23,11 @@ end
 keymap('n', '<leader>gs', '<cmd>Git<CR>');
 keymap('n', '<leader>gh', '<cmd>0Gclog<CR>');
 
--- Init edit and sourcing
-keymap('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<CR>')
-keymap('n', '<leader>vs', ':source ~/.config/nvim/init.lua<CR>')
+-- Rhubarb
+keymap('n', '<leader>gp', '<cmd>GBrowse<CR>');
 
 -- Document read mode
 keymap('n', '<leader>dr', ':set wrap linebreak nolist textwidth=0<CR>')
-
--- Remove highlighting
-keymap('n', '<leader>h', ':noh<CR>')
-
--- Open nonexistent files
-keymap('', 'gf', ':edit <cfile><CR>')
 
 -- Reselect visual selection after indenting
 keymap('v', '<', '<gv')
@@ -43,13 +36,6 @@ keymap('v', '>', '>gv')
 -- Split windows
 keymap('n', 'ss', ':split<Return><C-w>w')
 keymap('n', 'sv', ':vsplit<Return><C-w>w')
-keymap('n', 'sc', '<C-w>c')
-keymap('n', 'so', '<C-w>o')
-
--- Explorer
-keymap('n', '<leader>pf', ':Ex<CR>');
-
-keymap('n', '<leader>as', ':SupermavenToggle<CR>')
 
 -- JQ format JSON
 keymap('n', '<leader>jf', ":%!jq '.'<CR>")
