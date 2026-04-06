@@ -28,6 +28,5 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.oil',
   require 'plugins.telescope',
-  require 'plugins.smart-splits',
 
 }, {})
