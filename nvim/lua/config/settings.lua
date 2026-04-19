@@ -5,8 +5,6 @@ vim.g.maplocalleader = ' '
 -- General Config
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.termguicolors = false
-vim.opt.background = "light"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.mouse = 'a'
