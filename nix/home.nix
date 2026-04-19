@@ -42,6 +42,7 @@ in
     fzf
     gh
     go
+    google-cloud-sdk
     lima
     lua
     neovim
