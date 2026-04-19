@@ -21,9 +21,9 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  require 'plugins.treesitter',
-  require 'plugins.cmp',
-  require 'plugins.lsp',
+  -- require 'plugins.treesitter',
+  -- require 'plugins.cmp',
+  -- require 'plugins.lsp',
   require 'plugins.git',
   require 'plugins.mini',
   require 'plugins.oil',
