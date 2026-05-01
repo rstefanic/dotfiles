@@ -43,6 +43,7 @@ in
     gh
     go
     google-cloud-sdk
+    helix
     lima
     lua
     neovim
