@@ -46,7 +46,7 @@
             });
           in {
             bun = unstable.bun;
-            claude = unstable.claude;
+            claude-code = unstable.claude-code;
             lima = unstable.lima;
             nodejs = unstable.nodejs;
             neovim = unstable.neovim;
