@@ -66,6 +66,7 @@ in
   home.file.".zshrc".source = outOfStoreSymlinkToDotfiles ".zshrc";
   home.file.".tmux.conf".source = outOfStoreSymlinkToDotfiles ".tmux.conf";
   home.file.".config/jj/config.toml".source = outOfStoreSymlinkToDotfiles "jujutsu.toml";
+  home.file.".config/helix/config.toml".source = outOfStoreSymlinkToDotfiles "helix.toml";
 
   home.stateVersion = "24.11";
 }

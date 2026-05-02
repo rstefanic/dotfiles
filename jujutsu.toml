@@ -3,7 +3,7 @@ name = "Robert Stefanic"
 email = "rstefanic72@gmail.com"
 
 [ui]
-editor = "nvim"
+editor = "hx"
 default-command = "log"
 
 [signing]

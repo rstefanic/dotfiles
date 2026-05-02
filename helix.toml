@@ -1,0 +1,7 @@
+[editor]
+line-number = "relative"
+default-yank-register = "+"
+
+[keys.normal.space]
+l = ":reflow"
+u = "@<A-|>tee /tmp/helix-hl<ret>:sh cat /tmp/helix-hl | rep \"$(cat /tmp/helix-hl)\"<ret>"
