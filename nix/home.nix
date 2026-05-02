@@ -55,6 +55,7 @@ in
     pnpm
     ripgrep
     tmux
+    typescript-language-server
     inputs.sheets.packages.${pkgs.system}.default
     inputs.timer.packages.${pkgs.system}.default
   ];
