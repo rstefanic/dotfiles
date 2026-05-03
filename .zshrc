@@ -1,4 +1,4 @@
-EDITOR="nvim"
+EDITOR="hx"
 setopt AUTO_CD
 
 # History file
@@ -61,3 +61,4 @@ alias glg="git lg"
 alias nah="git restore -- ."
 
 eval "$(direnv hook zsh)"
+PATH="~/.local/bin:$PATH"
