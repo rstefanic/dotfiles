@@ -13,7 +13,7 @@ let
       lg = "!git l -G $1 -- $2";
     };
     core = {
-      editor = "nvim";
+      editor = "hx";
     };
     diff = {
       algorithm = "histogram";
