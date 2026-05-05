@@ -1,7 +1,23 @@
+theme = "naysayer"
+
 [editor]
 line-number = "relative"
 default-yank-register = "+"
 
+[keys.insert]
+C-y = "completion"
+
 [keys.normal.space]
 l = ":reflow"
 u = "@<A-|>tee /tmp/helix-hl<ret>:sh cat /tmp/helix-hl | rep \"$(cat /tmp/helix-hl)\"<ret>"
+
+[editor.statusline]
+left =  ["mode", "spinner", "file-absolute-path", "read-only-indicator", "file-modification-indicator"]
+
+[editor.lsp]
+enable = false
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 0
