@@ -1,4 +1,4 @@
-theme = "naysayer"
+theme = "acme"
 
 [editor]
 line-number = "relative"
@@ -8,7 +8,6 @@ default-yank-register = "+"
 C-y = "completion"
 
 [keys.normal.space]
-l = ":reflow"
 u = "@<A-|>tee /tmp/helix-hl<ret>:sh cat /tmp/helix-hl | rep \"$(cat /tmp/helix-hl)\"<ret>"
 
 [editor.statusline]
@@ -20,4 +19,4 @@ enable = false
 [editor.indent-guides]
 render = true
 character = "╎"
-skip-levels = 0
+skip-levels = 1
