@@ -36,9 +36,11 @@ in
     bun
     cargo
     claude-code
+    coreutils
     direnv
     docker
     duckdb
+    fd
     fzf
     gh
     go
@@ -49,6 +51,7 @@ in
     ngrok
     nil
     nodejs
+    nushell
     ollama
     opencode
     pnpm
