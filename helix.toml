@@ -1,6 +1,9 @@
+theme = "vesper"
+
 [editor]
 line-number = "relative"
 default-yank-register = "+"
+cursorline = true
 
 [keys.insert]
 C-y = "completion"
